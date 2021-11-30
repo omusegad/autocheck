@@ -1,0 +1,395 @@
+
+
+/*
+======
+= Additional Css  ===
+=======
+*/
+
+.auth-logo img{
+    height: auto;
+    width: 150px;
+ }
+
+ img.nav-logo {
+     width: 71px;
+     height: auto;
+ }
+
+ .threeLine{
+    margin-left: -28px;
+ }
+
+
+ /*
+ ======= STEPER FORM ====
+
+  */
+
+ #grad1 {
+     background-color: : #9C27B0;
+     background-image: linear-gradient(120deg, #FF4081, #81D4FA)
+ }
+
+ #msform {
+     text-align: center;
+     position: relative;
+     margin-top: 20px
+ }
+
+ #msform fieldset .form-card {
+     background: white;
+     border: 0 none;
+     border-radius: 0px;
+     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+     padding: 20px 40px 30px 40px;
+     box-sizing: border-box;
+     width: 94%;
+     margin: 0 3% 20px 3%;
+     position: relative
+ }
+
+ #msform fieldset {
+     background: white;
+     border: 0 none;
+     border-radius: 0.5rem;
+     box-sizing: border-box;
+     width: 100%;
+     margin: 0;
+     padding-bottom: 20px;
+     position: relative
+ }
+
+ #msform fieldset:not(:first-of-type) {
+     display: none
+ }
+
+ #msform fieldset .form-card {
+     text-align: left;
+     color: #9E9E9E
+ }
+
+ #msform input,
+ #msform textarea {
+     padding: 0px 8px 4px 8px;
+     border: none;
+     border-bottom: 1px solid #ccc;
+     border-radius: 0px;
+     margin-bottom: 25px;
+     margin-top: 2px;
+     width: 100%;
+     box-sizing: border-box;
+     font-family: montserrat;
+     color: #2C3E50;
+     font-size: 16px;
+     letter-spacing: 1px
+ }
+
+ #msform input:focus,
+ #msform textarea:focus {
+     -moz-box-shadow: none !important;
+     -webkit-box-shadow: none !important;
+     box-shadow: none !important;
+     border: none;
+     font-weight: bold;
+     border-bottom: 2px solid skyblue;
+     outline-width: 0
+ }
+
+ #msform .action-button {
+     width: 100px;
+     background: skyblue;
+     font-weight: bold;
+     color: white;
+     border: 0 none;
+     border-radius: 0px;
+     cursor: pointer;
+     padding: 10px 5px;
+     margin: 10px 5px
+ }
+
+ #msform .action-button:hover,
+ #msform .action-button:focus {
+     box-shadow: 0 0 0 2px white, 0 0 0 3px skyblue
+ }
+
+ #msform .action-button-previous {
+     width: 100px;
+     background: #616161;
+     font-weight: bold;
+     color: white;
+     border: 0 none;
+     border-radius: 0px;
+     cursor: pointer;
+     padding: 10px 5px;
+     margin: 10px 5px
+ }
+
+ #msform .action-button-previous:hover,
+ #msform .action-button-previous:focus {
+     box-shadow: 0 0 0 2px white, 0 0 0 3px #616161
+ }
+
+ select.list-dt {
+     border: none;
+     outline: 0;
+     border-bottom: 1px solid #ccc;
+     padding: 2px 5px 3px 5px;
+     margin: 2px
+ }
+
+ select.list-dt:focus {
+     border-bottom: 2px solid skyblue
+ }
+
+ .card {
+     z-index: 0;
+     border: none;
+     border-radius: 0.5rem;
+     position: relative
+ }
+
+ .fs-title {
+     font-size: 25px;
+     color: #2C3E50;
+     margin-bottom: 10px;
+     font-weight: bold;
+     text-align: left
+ }
+
+ #progressbar {
+     margin-bottom: 30px;
+     overflow: hidden;
+     color: lightgrey
+ }
+
+ #progressbar .active {
+     color: #000000
+ }
+
+ #progressbar li {
+     list-style-type: none;
+     font-size: 12px;
+     width: 25%;
+     float: left;
+     position: relative
+ }
+
+ #progressbar #account:before {
+     font-family: FontAwesome;
+     content: "\f023"
+ }
+
+ #progressbar #personal:before {
+     font-family: FontAwesome;
+     content: "\f007"
+ }
+
+ #progressbar #payment:before {
+     font-family: FontAwesome;
+     content: "\f09d"
+ }
+
+ #progressbar #confirm:before {
+     font-family: FontAwesome;
+     content: "\f00c"
+ }
+
+ #progressbar li:before {
+     width: 50px;
+     height: 50px;
+     line-height: 45px;
+     display: block;
+     font-size: 18px;
+     color: #ffffff;
+     background: lightgray;
+     border-radius: 50%;
+     margin: 0 auto 10px auto;
+     padding: 2px
+ }
+
+ #progressbar li:after {
+     content: '';
+     width: 100%;
+     height: 2px;
+     background: lightgray;
+     position: absolute;
+     left: 0;
+     top: 25px;
+     z-index: -1
+ }
+
+ #progressbar li.active:before,
+ #progressbar li.active:after {
+     background: skyblue
+ }
+
+ .radio-group {
+     position: relative;
+     margin-bottom: 25px
+ }
+
+ .radio {
+     display: inline-block;
+     width: 204;
+     height: 104;
+     border-radius: 0;
+     background: lightblue;
+     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+     box-sizing: border-box;
+     cursor: pointer;
+     margin: 8px 2px
+ }
+
+ .radio:hover {
+     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3)
+ }
+
+ .radio.selected {
+     box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1)
+ }
+
+ .fit-image {
+     width: 100%;
+     object-fit: cover
+ }
+
+
+ /* ====PERMMISION SECTION ===*/
+ ul.permsion-box li {
+     padding: 0 38px;
+     padding: 7px 38px;
+     list-style-type: none;
+ }
+
+ .role-btn {
+     padding: 5px 0;
+     width: 50%;
+ }
+
+
+
+
+
+ /* ===== = STEPER FORM SECTkiON === ==*/
+
+
+ /*  ==== Top Menu Portal === */
+ .topmenu{
+     background: #122178;
+     color: #fff;
+     padding: 10px;
+ }
+ .redcolor{
+     color:#FA2300;
+ }
+ .topmenu a{
+     color: #fff;
+ }
+
+ nav#menu-box {
+     border-bottom: 3px solid #7C8FBA;
+ }
+
+ nav#menu-box a {
+     font-size: 16px;
+     text-transform: uppercase;
+     font-weight: 700;
+     color: #122178;
+ }
+ nav#menu-box li {
+     padding: 0px 23px;
+ }
+ nav#menu-box {
+     padding: 14px 0;
+ }
+ .footer-box{
+     width: 100%;
+     background: #122178;
+     color: #fff;
+     overflow: auto;
+     padding: 15px 0;
+ }
+ .footer-box a{
+     color: #fff;
+
+ }
+ img.assea-nav-logo {
+     width: 102px;
+     height: auto;
+ }
+
+ .top-five {
+     background: #FF7573;
+     color: #fff;
+     padding: 10px;
+ }
+ ul.exchange-list {
+     padding: 0 0 0 22px;
+     height: auto;
+ }
+ ul.exchange-list li {
+     list-style-type: decimal;
+     border-bottom: 1px solid #d2d2d2;
+     padding: 9px 0 12px 10px;
+     margin-top: 10px;
+     background-color: #fff;
+ }
+ button.btn.search-btn {
+     background: #FF7573;
+     border: none;
+     border-radius: 0;
+ }
+ input.form-control {
+     border-radius: 0!important;
+ }
+
+
+ /* ======== Stepper form styles section ==========*/
+
+.stepwizard-step p {
+    margin-top: 0px;
+    color:#666;
+}
+.stepwizard-row {
+    display: table-row;
+}
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard .btn.disabled, .stepwizard .btn[disabled], .stepwizard fieldset[disabled] .btn {
+    opacity:1 !important;
+    color:#bbb;
+}
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content:" ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-index: 0;
+}
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+.close-icon {
+    margin-top: -35px;
+    margin-right: 16px;
+}
+ /* ======== End of Stepper form styles section ==========*/
