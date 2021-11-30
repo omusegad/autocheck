@@ -17,8 +17,8 @@ class CreateJobcardsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');
-            $table->string('companyName');
             $table->unsignedBigInteger('wsmast_jobno');
+            $table->string('companyName');
             $table->string('regno');
             $table->string('customer');
             $table->string('account')->nullable();

@@ -42,7 +42,8 @@ class JobCardController extends Controller
      */
     public function store(Request $request)
     {
-        $cards =  Excel::import(new JobCardImport,$request->file('file')->store('file'));
+
+        $cards =  Excel::import(new JobCardImport($request->input('company_id')),$request->file('file'));
         return back()->with('message', "Job Card imported successfully!");
 
     }

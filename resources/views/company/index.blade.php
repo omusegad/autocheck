@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-lg-6 text-right">
-            <a class="btn btn btn-outline-primary" href="{{route('company.create')}}">Add Brances </a>
+            <a class="btn btn btn-outline-primary" href="{{route('company.create')}}">Add Branches </a>
         </div>
     </div>
     <!-- end page title -->

@@ -17,21 +17,21 @@
     <!-- end page title -->
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
                     <form action="{{ route('jobcards.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
-                            @foreach($branches as $item)
-                            <select class="selectpicker form-control">
-                                <option value="{{$item->id}}">{{$item->companyName}}</option>
+                            <select class="selectpicker form-control" name="company_id">
+                                @foreach($branches as $item)
+                                  <option value="{{$item->id}}">{{$item->companyName}}</option>
+                                @endforeach
                             </select>
-                            @endforeach
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group mt-3">
                             <input type="file" name="file" class="form-control">
                         </div>
                         <button class="btn btn-info"><i class="fas fa-file-import"></i> Import Jobcard</button>
