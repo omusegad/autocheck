@@ -44,8 +44,9 @@ class JobCardController extends Controller
     {
 
         $cards =  Excel::import(new JobCardImport($request->input('company_id')),$request->file('file'));
-        return back()->with('message', "Job Card imported successfully!");
-
+        if($cards){
+            return back()->with('message', "Job Card imported successfully!");
+        }
     }
 
     /**

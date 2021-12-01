@@ -4,7 +4,8 @@
             <button type="button" class="threeLine btn btn-sm px-2 font-size-16 waves-effect vertical-menu-btn">
                 <i class="fa fa-fw fa-bars"></i>
             </button>
-            <img class="nav-logo" src="{{ asset('public/img/asea-logo.png') }}"  alt="">
+            {{-- <img class="nav-logo" src="{{ asset('public/img/asea-logo.png') }}"  alt=""> --}}
+            <h4>Toyota</h4>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">

@@ -24,6 +24,7 @@
                         @csrf
 
                         <div class="form-group">
+                            <label for="">Choose Branch</label>
                             <select class="selectpicker form-control" name="company_id">
                                 @foreach($branches as $item)
                                   <option value="{{$item->id}}">{{$item->companyName}}</option>
@@ -32,6 +33,7 @@
                         </div>
 
                         <div class="form-group mt-3">
+                            <label for="">Import Excel</label>
                             <input type="file" name="file" class="form-control">
                         </div>
                         <button class="btn btn-info"><i class="fas fa-file-import"></i> Import Jobcard</button>

@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-lg-12">
             <div class="text-center">
-                <img src="{{ asset('public/img/asea-logo.png') }}"  alt="">
+                {{-- <img src="{{ asset('public/img/asea-logo.png') }}"  alt=""> --}}
+                <h3>Toyota</h3>
             </div>
         </div>
     </div>

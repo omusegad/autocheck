@@ -12,13 +12,14 @@ class Sparepart extends Model
         'id','created_at','updated_at'
     ];
 
-      /**
-     * Get the user that owns the Jobcard
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function company(): BelongsTo
-    {
-        return $this->belongsTo(Company::class, 'company_id', 'id');
-    }
+    // /**
+    //  * Get the user that owns the Jobcard
+    //  *
+    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    //  */
+    // public function company():HasMany
+    // {
+    //     return $this->hasMany(Company::class);
+    // }
+
 }

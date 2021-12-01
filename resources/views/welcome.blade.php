@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>ASEA</title>
+    <title>Toyota</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -24,9 +24,15 @@
             {{-- @include('layouts.topmenu') --}}
             {{-- @include('layouts.guest_navigation') --}}
            <div class="container-fluid">
-            <div class="row justify-items-center">
-                <div class="col-lg-12">
-                    <h5>welcome</h5>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-5">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <div class="text-center mt-2">
+                                <h5 class="text-primary">Silence is Golen !</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
            </div>

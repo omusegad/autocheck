@@ -33,14 +33,16 @@
                     <form action="{{ route('spareparts.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            @foreach($branches as $item)
-                                <select class="selectpicker form-control">
-                                    <option value="{{$item->id}}">{{$item->companyName}}</option>
-                                </select>
-                            @endforeach
+                            <label for="">Choose Branch</label>
+                            <select class="selectpicker form-control" name="company_id">
+                                @foreach($branches as $item)
+                                <option value="{{$item->id}}">{{$item->companyName}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group mt-3">
                             <div class="form-group">
+                                <label for="">Import Excel</label>
                                 <input type="file" name="file" class="form-control" required>
                             </div>
                             @error('file')

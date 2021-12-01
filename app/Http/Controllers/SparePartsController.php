@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sparepart;
 use App\Models\Company;
+use App\Models\Sparepart;
 
 use Illuminate\Http\Request;
+use App\Imports\JobCardImport;
+use App\Imports\ImportSpareParts;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SparePartsController extends Controller
 {
@@ -17,7 +20,6 @@ class SparePartsController extends Controller
     public function index()
     {
         $spareparts = Sparepart::all();
-
         return view('parts.index', compact('spareparts'));
     }
 
@@ -40,7 +42,10 @@ class SparePartsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cards =  Excel::import(new ImportSpareParts($request->input('company_id')),$request->file('file'));
+        if($cards){
+            return back()->with('message', "Spareparts imported successfully!");
+        }
     }
 
     /**

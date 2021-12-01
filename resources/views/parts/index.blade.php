@@ -50,7 +50,7 @@
                         @foreach ($spareparts as $item)
                         <tr>
                             <td scope="row">{{ $count++ }}</td>
-                            <td>{{ $item->company['companyName'] }} </td>
+                            <td>{{ $item->company }} </td>
                             <td>{{ $item->otherpJOBNO }}</td>
                             <td>{{ $item->otherp_tr_date }}</td>
                             <td>{{ $item->otherp_prt_num  }}</td>

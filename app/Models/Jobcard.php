@@ -19,9 +19,10 @@ class Jobcard extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function company(): BelongsTo
+    public function company():HasMany
     {
-        return $this->belongsTo(Company::class, 'company_id', 'id');
+        return $this->hasMany(Company::class);
     }
+
 
 }
