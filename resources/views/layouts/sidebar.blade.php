@@ -45,12 +45,6 @@
                         <span>{{ __('Spareparts') }}</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('dashboard') }}">
-                        <i class="uil-home-alt"></i>
-                        <span>{{ __('dashboard') }}</span>
-                    </a>
-                </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">

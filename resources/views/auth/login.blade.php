@@ -5,8 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-12">
             <div class="text-center">
-                {{-- <img src="{{ asset('public/img/asea-logo.png') }}"  alt=""> --}}
-                <h3>Toyota</h3>
+                <img src="{{ asset('public/img/log.png') }}"  alt="">
             </div>
         </div>
     </div>
@@ -16,7 +15,7 @@
                 <div class="card-body p-4">
                     <div class="text-center mt-2">
                         <h5 class="text-primary">Welcome Back !</h5>
-                        <p class="text-muted">Sign in to continue to Toyota portal.</p>
+                        <p class="text-muted">Sign in to international maritime organisation portal.</p>
                     </div>
 
                     <div class="p-2 mt-4">

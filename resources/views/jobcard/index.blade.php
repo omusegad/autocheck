@@ -59,7 +59,7 @@
                     @foreach ($jobs as $item)
                     <tr>
                         <td scope="row">{{ $count++ }}</td>
-                        <td scope="row">{{ $item->companyName }}</td>
+                        <td scope="row">{{ $item->company['companyName'] }}</td>
                         <td scope="row">{{ $item->wsmast_jobno }}</td>
                         <td scope="row">{{ $item->regno }}</td>
                         <td scope="row">{{ $item->customer }}</td>
