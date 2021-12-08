@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RolesController;
+use App\Http\Controllers\MatrixController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\JobCardController;
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\AsignRoleController;
+use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SparePartsController;
 
@@ -40,6 +42,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('jobcards', JobCardController::class);
     Route::resource('company', CompanyController::class);
     Route::resource('spareparts', SparePartsController::class);
+
+    Route::resource('countries', CountriesController::class);
+    Route::resource('matrix', MatrixController::class);
 
 });
 

@@ -7,11 +7,11 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="page-title-box d-flex align-items-center justify-content-between">
-                <h4 class="mb-0">Branches </h4>
+                <h4 class="mb-0">Edit Country </h4>
             </div>
         </div>
         <div class="col-lg-6 text-right text-white">
-            <a class="text-info btn btn-outline-info" href="{{route('company.index')}}">Branches</a>
+            <a class="text-info btn btn-outline-info" href="{{route('countries.index')}}">Country</a>
         </div>
     </div>
     <!-- end page title -->
@@ -30,28 +30,21 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('company.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('countries.update', $branch->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        {{ method_field('PATCH') }}
+
                         <div class="form-group">
-                            <label for="">Branch Name</label>
-                            <input type="text" name="companyName" placeholder="Branch Name" class="form-control" required>
-                            @error('companyName')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="form-group mt-3">
-                            <label for="">Location</label>
-                            <input type="text" name="location" placeholder="Location" class="form-control" required>
-                            @error('location')
+                            <label for="">Country Name</label>
+                            <input type="text" name="name" value="{{ $country->name }}" class="form-control" required>
+                            @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
                         <div class="form-group text-right">
-                            <button class="btn btn-info font-weight-bold">SUBMIT</button>
+                            <button class="btn btn-info font-weight-bold">UPDATE</button>
                         </div>
                     </form>
                 </div>

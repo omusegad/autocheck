@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Jobcard extends Model
+class Matrix extends Model
 {
     use HasFactory;
+    public $table = 'matrices';
     protected $guarded = [
         'id',
         'created_at',
@@ -15,14 +16,13 @@ class Jobcard extends Model
     ];
 
     /**
-     * Get the user that owns the Jobcard
+     * Get the user that owns the Matrix
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function company()
+    public function country()
     {
-        return $this->belongsTo(Company::class);
+        return $this->belongsTo(Country::class, 'coiuntry_id', 'id');
     }
-
 
 }
