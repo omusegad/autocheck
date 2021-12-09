@@ -5,13 +5,16 @@
 <div class="container-fluid">
 
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-6">
             @if ($message = Session::get('message'))
                 <div class="alert alert-info alert-dismissable pt-2">
                     <p>{{ Session::get('message') }}</p>
                     <button type = "button" class = "close  close-btn" data-dismiss = "alert" aria-hidden = "true">×  </button>
                 </div>
             @endif
+        </div>
+        <div class="col-lg-6 text-right text-white">
+            <a class="text-info btn btn-outline-info" href="{{route('matrix.create')}}"> Add Matrix</a>
         </div>
     </div>
       <!-- start page title -->
@@ -47,12 +50,15 @@
                     @foreach ($matrix as $item)
                     <tr>
                         <td scope="row">{{ $count++ }}</td>
-                        <td scope="row">{{ $item->country['name'] }}</td>
+                        <td scope="row">
+                            <a href="">{{ $item->country['name'] }}</a>
+                            {{-- <a href="{{ route('countries.show', $item->country['id'])}}">{{ $item->country['name'] }}</a> --}}
+                        </td>
                         <td scope="row">{{ $item->matrixType }}</td>
                         <td scope="row">{{ $item->year }}</td>
                         <td scope="row">{{ $item->status }}</td>
                         <td scope="row">{{ $item->priority }}</td>
-                        <td scope="row">{{ $item->description }}</td>
+                        <td>{{ $item->description }}</td>
                         <td>
                             <span class="action-btns">
                                 <a class="edit-btn" href="{{ route('matrix.edit', $item->id ) }}">

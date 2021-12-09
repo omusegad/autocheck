@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Matrix;
 use App\Models\Country;
 use Illuminate\Http\Request;
 use App\Http\Requests\CountryRequest;
@@ -51,7 +52,10 @@ class CountriesController extends Controller
      */
     public function show($id)
     {
-        //
+        $country = Country::findorFail($id);
+        $matrix = Matrix::where('country_id', $country->id)->get();
+        // dd($matrix);
+        return view('countries.show', compact('country','matrix'));
     }
 
     /**

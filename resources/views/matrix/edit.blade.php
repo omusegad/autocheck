@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-lg-6">
             <div class="page-title-box d-flex align-items-center justify-content-between">
-                <h4 class="mb-0">Country Matrix </h4>
+                <h4 class="mb-0">Edit Matrix </h4>
             </div>
         </div>
         <div class="col-lg-6 text-right text-white">
@@ -29,16 +29,18 @@
 
     <div class="row">
         <div class="col-lg-10">
-        <form action="{{ route('matrix.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('matrix.update',$matrix->id ) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            {{ method_field('PATCH') }}
+
             <div class="row">
             <div class="form-group col-lg-6">
                 <label for="">Matrix</label>
-                <input type="text" name="matrixType" class="form-control" placeholder="Enter Matrix" required>
+                <input type="text" name="matrixType" class="form-control"  value="{{ $matrix->matrixType }}" required>
             </div>
             <div class="form-group col-lg-6">
                 <label for="">Year</label>
-                <input type="text" class="form-control" name="year" placeholder="year" required>
+                <input type="text" class="form-control" name="year"  value="{{ $matrix->year }}" required>
              </div>
             <div class="form-group col-lg-6">
                 <label for="">Choose Country</label>
@@ -64,7 +66,7 @@
             </div>
             <div class="form-group col-lg-6">
                 <label for="">Description</label>
-                <textarea class="form-control" name="description" id="" cols="30" rows="5" required></textarea>
+                <textarea class="form-control" name="description" id="" cols="30" rows="5" required> "{{ $matrix->description }}</textarea>
             </div>
             <div class="form-group col-lg-6">
                <div class="prio">
@@ -76,7 +78,7 @@
                     </select>
                </div>
                <div class="submit-bx mt-4 text-right">
-                 <button class="btn btn-info text-white font-weight-bold"> SUBMIT</button>
+                 <button class="btn btn-info text-white font-weight-bold"> UPDATE</button>
                </div>
             </div>
 

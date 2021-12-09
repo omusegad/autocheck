@@ -22,7 +22,7 @@ class Matrix extends Model
      */
     public function country()
     {
-        return $this->belongsTo(Country::class, 'coiuntry_id', 'id');
+        return $this->belongsTo(Country::class, 'country_id', 'id');
     }
 
 }

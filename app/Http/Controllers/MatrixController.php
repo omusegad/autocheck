@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Matrix;
+use App\Models\Country;
 use Illuminate\Http\Request;
-use App\Http\Requests\MatrixRequerst;
+use App\Http\Requests\MatrixRequest;
 
 class MatrixController extends Controller
 {
@@ -26,7 +27,8 @@ class MatrixController extends Controller
      */
     public function create()
     {
-        return view("matrix.create");
+        $country = Country::all();
+        return view("matrix.create", compact('country'));
     }
 
     /**
@@ -35,8 +37,9 @@ class MatrixController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MatrixRequerst $request)
+    public function store(MatrixRequest $request)
     {
+        // dd($request->all());
         $validated = $request->validated();
         Matrix::create($validated);
         return back()->with('message', "Matrix created successfully!");
@@ -61,8 +64,9 @@ class MatrixController extends Controller
      */
     public function edit($id)
     {
-        $matrix = Matrix::findorFail($id);
-        return view('matrix.edit', compact('matrix'));
+        $matrix  = Matrix::findorFail($id);
+        $country = Country::all();
+        return view('matrix.edit', compact('matrix','country'));
     }
 
     /**
@@ -96,6 +100,6 @@ class MatrixController extends Controller
     {
         $matrix = Matrix::findorFail($id);
         $matrix->delete();
-        return back()->with('message', "matrix deleted successfully!");
+        return back()->with('message', "Matrix deleted successfully!");
     }
 }
