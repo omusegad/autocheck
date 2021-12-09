@@ -61,7 +61,8 @@ class MembersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user  = User::findorFail($id);
+        return view('members.edit', compact('user'));
     }
 
     /**
@@ -73,7 +74,14 @@ class MembersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findorFail($id);
+        $user->update([
+            'name' =>  $request->name,
+            'email' =>$request->email,
+            'password' => $request->password ?  $user->password : Hash::make($request->password),
+        ]);
+        return back()->with('message', "Member updated successfully!");
+
     }
 
     /**
@@ -84,7 +92,10 @@ class MembersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findorFail($id);
+        $user->delete();
+
+        return redirect()->route('members.index')->with('message', "Member deleted successfully!");
     }
 
 

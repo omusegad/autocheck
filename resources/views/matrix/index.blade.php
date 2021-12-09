@@ -69,7 +69,7 @@
                                 <form action="{{ route('matrix.destroy', $item->id) }}" id="form_delete_post_{{ $item->id }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <div type="submit" class="text-danger"> <i class="fa fa-trash"></i></div>
+                                    <button type="submit" class="text-danger"> <i class="fa fa-trash"></i></button>
                                 </form>
                              </span>
                         </td>

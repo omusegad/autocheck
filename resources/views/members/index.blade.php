@@ -5,13 +5,15 @@
 <div class="container-fluid">
       <!-- start page title -->
       <div class="row">
-        <div class="col-12">
+        <div class="col-lg-6">
             <div class="page-title-box  d-flex align-items-center justify-content-between">
                 <h4 class="mb-0"> Members </h4>
             </div>
         </div>
+        <div class="col-lg-6 text-right text-white">
+            <a class="text-info btn btn-outline-info" href="{{route('members.create')}}"> Add Members</a>
+        </div>
     </div>
-    <!-- end page title -->
 
     <div class="row">
         <div class="col-md-12">
@@ -22,8 +24,8 @@
                         <th>Name</th>
                         <th>Role</th>
                         <th>Email</th>
-                        <th>Phone Number</th>
                         <th>Role or Rovoke</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,7 +44,6 @@
                             @endif
                         </td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->phoneNumber }}</td>
                         <td>
                             <button type="button"  data-userid="{{  $user->id }}" class="btn btn-outline-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-sm">
                                 Asign
@@ -84,9 +85,20 @@
                                     </div><!-- /.modal-content -->
                                 </div><!-- /.modal-dialog -->
                             </div><!-- /.modal -->
-                            {{-- <button type="button" class="btn btn-outline-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-sm">
-                                Rovoke
-                            </button> --}}
+                        </td>
+                        <td>
+                            <span class="action-btns">
+                                <a class="edit-btn" href="{{ route('members.edit', $user->id ) }}">
+                                     <i class="far fa-edit"></i>
+                                </a>
+                            </span>
+                            <span class="action-btns">
+                                <form action="{{ route('members.destroy', $user->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-danger"> <i class="fa fa-trash"></i></button>
+                                </form>
+                             </span>
                         </td>
                     </tr>
                     @endforeach
