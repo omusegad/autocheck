@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
 use App\Models\Matrix;
 use App\Models\Country;
 use Illuminate\Http\Request;
@@ -17,7 +18,9 @@ class MatrixController extends Controller
     public function index()
     {
         $matrix = Matrix::all();
-        return view("matrix.index", compact('matrix'));
+        return Inertia::render('matrix.index', [
+            "matrix" =>  $matrix,
+        ]);
     }
 
     /**

@@ -23,9 +23,7 @@
 
 </head>
 <body class="authentication-bg">
-    <div class="account-pages my-5 pt-sm-5">
-        @yield('content')
-    </div>
+    @yield('content')
 
     <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>

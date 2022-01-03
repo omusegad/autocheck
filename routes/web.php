@@ -20,16 +20,11 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 Auth::routes();
-Route::get('/', function () {
-    //  Artisan::call('cache:clear');
-    //  Artisan::call('optimize');
-    return view('welcome');
-});
+Route::get('/', [DashboardController::class, 'index'])->name('home');
+Route::resource('matrix', MatrixController::class);
 
-Route::get('/home', [DashboardController::class, 'index'])->name('home');
+
 Route::middleware(['auth'])->group(function () {
     Route::resource('members', MembersController::class);
     Route::resource('roles',RolesController::class);
@@ -37,7 +32,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('permission',[PermissionController::class, 'store'])->name('permission.store');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('countries', CountriesController::class);
-    Route::resource('matrix', MatrixController::class);
 
 });
 
