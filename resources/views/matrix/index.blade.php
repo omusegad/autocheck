@@ -30,35 +30,33 @@
     <div class="row">
         <div class="col-md-12">
            <div class="table-responsive">
-            <table class="table bg-white  table-striped table-condensed table-hover overflow-y">
+
+            <table id="matrix" class="table table-bordered table-hover table-striped data-tabl w-100">
+
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>Pillar</th>
                         <th>Country</th>
-                        <th>Matrix</th>
-                        <th>Year</th>
+                        <th>Key Action</th>
                         <th>Status</th>
                         <th>Priority</th>
-                        <th>Description</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+
                     @php
-                        $count=1
-                    @endphp
-                    @foreach ($matrix as $item)
+                    $count=1
+                @endphp
+                @foreach ($matrix as $item)
                     <tr>
-                        <td scope="row">{{ $count++ }}</td>
-                        <td scope="row">
-                            <a href="">{{ $item->country['name'] }}</a>
-                            {{-- <a href="{{ route('countries.show', $item->country['id'])}}">{{ $item->country['name'] }}</a> --}}
-                        </td>
-                        <td scope="row">{{ $item->matrixType }}</td>
-                        <td scope="row">{{ $item->year }}</td>
-                        <td scope="row">{{ $item->status }}</td>
-                        <td scope="row">{{ $item->priority }}</td>
-                        <td>{{ $item->description }}</td>
+                        <th>#</th>
+                        <td>{{ $count++ }} </td>
+                        <td>Maritime Security Governance</td>
+                        <td>{{ $item->country['name'] }}</td>
+                        <td> {{ $item->description }} </td>
+                        <td>{{ $item->status }}</td>
+                        <td>{{ $item->priority }}</td>
                         <td>
                             <span class="action-btns">
                                 <a class="edit-btn" href="{{ route('matrix.edit', $item->id ) }}">
@@ -74,7 +72,8 @@
                              </span>
                         </td>
                     </tr>
-                    @endforeach
+                @endforeach
+
                 </tbody>
             </table>
            </div>
@@ -83,5 +82,9 @@
     </div>
 
 </div>
+
+
+
+
 
 @endsection

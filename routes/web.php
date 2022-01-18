@@ -21,11 +21,11 @@ use App\Http\Controllers\DashboardController;
 |
 */
 Auth::routes();
-Route::get('/', [DashboardController::class, 'index'])->name('home');
 Route::resource('matrix', MatrixController::class);
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('home');
     Route::resource('members', MembersController::class);
     Route::resource('roles',RolesController::class);
     Route::resource('asign-role',AsignRoleController::class);

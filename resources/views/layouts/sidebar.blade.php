@@ -1,93 +1,114 @@
-  <!-- ========== Left Sidebar Start ========== -->
-  <div class="vertical-menu">
 
-    <div data-simplebar class="sidebar-menu-scroll">
-        <!--- Sidemenu -->
-        <div id="sidebar-menu">
-            <!-- Left Menu Start -->
-            <ul class="metismenu list-unstyled" id="side-menu">
-                <li>
+<div class="app-sidebar sidebar-shadow">
+    <div class="app-header__logo">
+        <div class="logo-src">
+            <img class="img-fluid"  src="{{ asset('public/img/logo.png') }}"  alt="">
+        </div>
+        <div class="header__pane ml-auto">
+            <div>
+                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+            </div>
+        </div>
+    </div>
+    <div class="app-header__mobile-menu">
+        <div>
+            <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+        </div>
+    </div>
+    <div class="app-header__menu">
+        <span>
+                <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                    <span class="btn-icon-wrapper">
+                        <i class="fa fa-ellipsis-v fa-w-6"></i>
+                    </span>
+        </button>
+        </span>
+    </div>
+    <div class="scrollbar-sidebar">
+        <div class="app-sidebar__inner">
+            <ul class="vertical-nav-menu">
+                <li class="men-item">
                     <a href="{{ route('dashboard') }}">
-                        <i class="uil-home-alt"></i>
+                        <i class="fas fa-tachometer-alt icon"></i>
                         <span>{{ __('Dashboard') }}</span>
                     </a>
                 </li>
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="uil-window-section"></i>
-                        <span> Countries </span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li>
-                            <a href="{{ route('countries.index') }}">
-                                <i class="uil-home-alt"></i>
-                                <span>{{ __('Countries') }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('countries.create') }}">
-                                <i class="uil-home-alt"></i>
-                                <span>{{ __('Add Countries') }}</span>
-                            </a>
-                        </li>
-                        <li>
-                    </ul>
-                </li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="uil-window-section"></i>
-                        <span> Matrix </span>
+                <li class="men-item">
+                    <a href="#" class="mm-active">
+                        <i class="fas fa-database icon"></i>Matrix
+                        <i class="fas fa-chevron-down down"></i>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
+                    <ul>
                         <li>
                             <a href="{{ route('matrix.index') }}">
-                                <i class="uil-home-alt"></i>
-                                <span>{{ __('Matrix') }}</span>
+                                <i class="metismenu-icon"></i> Matrix
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('matrix.create') }}">
-                                <i class="uil-home-alt"></i>
-                                <span>{{ __('Add Matrix') }}</span>
+                                <i class="metismenu-icon">
+                                </i>Add Matrix
                             </a>
                         </li>
-                        <li>
                     </ul>
                 </li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="uil-window-section"></i>
-                        <span>Manage Members </span>
+                <li class="men-item">
+                    <a  href="#">
+                        <i class="fas fa-flag icon"></i>Countries
+                        <i class="fas fa-chevron-down down"></i>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
+                    <ul>
+                        <li>
+                            <a href="{{ route('countries.index') }}">
+                                <i class="metismenu-icon"></i> Countries
+                            </a>
+                        </li>
+                        <li>
+
+                            <a href="{{ route('countries.create') }}">
+                                <i class="metismenu-icon">
+                                </i>Add Countries
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="men-item">
+                    <a href="#">
+                        <i class="fas fa-users icon"></i> Users
+                        <i class="fas fa-chevron-down down"></i>
+                    </a>
+                    <ul>
+
+                        <li>
+                            <a href="{{ route('members.index') }}">
+                                <i class="metismenu-icon"></i> Users
+                            </a>
+                        </li>
                         <li>
                             <a href="{{ route('roles.index') }}">
-                                <i class="uil-home-alt"></i>
                                 <span>{{ __('Manage Roles') }}</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('members.index') }}">
-                                <i class="uil-home-alt"></i>
-                                <span>{{ __('Members') }}</span>
-                            </a>
-                        </li>
-                        <li>
                             <a href="{{ route('register') }}">
-                                <i class="uil-home-alt"></i>
-                                <span>{{ __('Add Members') }}</span>
+                                <i class="metismenu-icon">
+                                </i>Add Users
                             </a>
                         </li>
-
-                        <li>
                     </ul>
                 </li>
             </ul>
         </div>
-        <!-- Sidebar -->
-
     </div>
 </div>
-<!-- Left Sidebar End -->
