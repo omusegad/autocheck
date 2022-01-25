@@ -10,7 +10,7 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script  type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,12 +22,12 @@
 
     <!-- Styles -->
       <!-- Styles -->
-      <link href="{{ asset('public/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-      <link href="{{ asset('public/css/main.min.css') }}"  rel="stylesheet" type="text/css" />
-      <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+      <link href="{{ asset('css/main.min.css') }}"  rel="stylesheet" type="text/css" />
+      <link href="{{ asset('css/app.css') }}" rel="stylesheet"  type="text/css">
 
-      <link href="{{ asset('public/css/main.css') }}" rel="stylesheet">
-      <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/main.css') }}" rel="stylesheet"  type="text/css">
+      <link href="{{ asset('css/style.css') }}" rel="stylesheet"  type="text/css">
 
 </head>
 <body>
@@ -53,27 +53,61 @@
             </div>
     </div>
 
-    <script type="text/javascript" src="{{ asset('public/js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/bootstrap.bundle.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/metisMenu.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/simplebar.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/waves.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/jquery.waypoints.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/jquery.counterup.min.js') }}"></script>
+    {{-- <script type="text/javascript" src="{{ asset('js/jquery-3.1.1.min.js') }}"></script> --}}
+    <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
-    <script type="text/javascript" src="{{ asset('public/js/boostrap.min.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
-    <script type="text/javascript" src="{{ asset('public/js/filter.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/main.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/script.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+
+    <script>
+        //fiters
+        jQuery(function($) {
+            dataTable = $("#matrix").DataTable({
+                "columnDefs": [{
+                    "targets": [0],
+                    "visible": false
+                }]
+
+            });
+
+            $('.filter-checkbox').on('change', function(e) {
+                var searchTerms = []
+                $.each($('.filter-checkbox'), function(i, elem) {
+                    if ($(elem).prop('checked')) {
+                        searchTerms.push("^" + $(this).val() + "$")
+                    }
+                })
+                dataTable.column(4).search(searchTerms.join('|'), true, false, true).draw();
+            });
 
 
-     <!-- apexcharts -->
-    <script type="text/javascript" src="{{ asset('public/js/apexcharts.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/dashboard.init.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/main.min.js') }}"></script>
+            $('.pillar-dropdown').on('change', function(e) {
+                var pillar = $(this).val();
+                $('.pillar-dropdown').val(pillar)
+                console.log(pillar)
+                    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+                dataTable.column(0).search(pillar).draw();
+            });
+
+            $('.country-dropdown').on('change', function(e) {
+                var country = $(this).val();
+                $('.country-dropdown').val(country)
+                console.log(country)
+                    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+                dataTable.column(1).search(country).draw();
+            })
+        });
+
+        window.addEventListener('load', function() {
+            document.querySelector('.pre-loader').classList.add('is-loaded');
+        });
+    </script>
 
     @stack('custom')
 </body>

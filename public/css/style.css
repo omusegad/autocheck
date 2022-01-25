@@ -422,6 +422,18 @@
     opacity: .5;
   }
 
+  .vertical-nav-menu li a.mm-active {
+    color: #fff!important;
+
+}
+
+.page-content {
+  padding-top: 21px!important;
+}
+
+.mm-active>i {
+    color: #fff!important;
+}
 /*==== LOGIN STYLES ====*/
 
 .landing-page{

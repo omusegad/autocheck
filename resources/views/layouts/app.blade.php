@@ -44,7 +44,7 @@
     </div>
     @yield('content')
 
-    <script type="text/javascript" src="{{ asset('public/js/jquery-3.1.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
 
     <script type="text/javascript" src="{{ asset('public/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/bootstrap.bundle.min.js') }}"></script>
@@ -52,21 +52,7 @@
     <script defer  type="text/javascript" src="{{ asset('public/js/owl.carousel.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/particles/particles.js') }}"></script>
 
-    <script type="text/javascript" src="{{ asset('public/js/metisMenu.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/simplebar.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/waves.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/jquery.waypoints.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/jquery.counterup.min.js') }}"></script>
-
-
-
-    <!--  -->
-    <script type="text/javascript" src="{{ asset('public/js/jquery.steps.min.js') }}"></script> <!-- jquery step -->
-    <script type="text/javascript" src="{{ asset('public/js/form-wizard.init.js') }}"></script><!-- form wizard init -->
-
      <!-- apexcharts -->
-    <script type="text/javascript" src="{{ asset('public/js/apexcharts.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/dashboard.init.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/main.min.js') }}"></script>
 
 

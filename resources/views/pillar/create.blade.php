@@ -7,11 +7,11 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="page-title-box d-flex align-items-center justify-content-between">
-                <h4 class="mb-0">Country</h4>
+                <h4 class="mb-0">Pillar</h4>
             </div>
         </div>
         <div class="col-lg-6 text-right text-white">
-            <a class="text-info btn btn-outline-info" href="{{route('countries.index')}}">Countries</a>
+            <a class="text-info btn btn-outline-info" href="{{route('pillars.index')}}">Pillars</a>
         </div>
     </div>
     <!-- end page title -->
@@ -30,11 +30,20 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('countries.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('pillars.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="">Country Name</label>
-                            <input type="text" name="name" placeholder="Country Name" class="form-control text-capitalize" required>
+                            <label for="">Pillar Name</label>
+                            <input type="text" name="name" placeholder="Pillar Name" class="form-control text-capitalize" required>
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="">Key Action </label>
+                            <input type="text" name="keyAction" placeholder="key Action" class="form-control text-capitalize" required>
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use App\Models\Matrix;
+use App\Models\Pillar;
 use App\Models\Country;
+use App\Models\KeyAction;
 use Illuminate\Http\Request;
 use App\Http\Requests\MatrixRequest;
 
@@ -18,9 +20,11 @@ class MatrixController extends Controller
     public function index()
     {
         $matrix = Matrix::all();
-        return Inertia::render('matrix.index', [
-            "matrix" =>  $matrix,
-        ]);
+        // dd($matrix);
+        $countries = Country::all();
+        $pillars = Pillar::all();
+        $keyactions = KeyAction::all();
+        return view("matrix.index", compact('countries','matrix','pillars','keyactions'));
     }
 
     /**
@@ -31,7 +35,10 @@ class MatrixController extends Controller
     public function create()
     {
         $country = Country::all();
-        return view("matrix.create", compact('country'));
+        $pillars = Pillar::all();
+        $keyactions = KeyAction::all();
+
+        return view("matrix.create", compact('country','pillars','keyactions'));
     }
 
     /**
@@ -44,6 +51,8 @@ class MatrixController extends Controller
     {
         // dd($request->all());
         $validated = $request->validated();
+        dd( $validated);
+        
         Matrix::create($validated);
         return back()->with('message', "Matrix created successfully!");
     }

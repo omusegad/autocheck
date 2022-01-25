@@ -33,33 +33,36 @@
 
                         <form name="loginform" id="loginform"  method="POST" action="{{ route('login') }}">
                             @csrf
-
-                            <p class="login-username">
-                                <label for="user_login">Username or Email Address</label>
-                                <input id="email" type="email"id="user_login" class="input" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" size="20" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
-                                @error('email')
+                            <div class="form-group ">
+                                <label for="">Email</label>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email"  autocomplete="email" autofocus>
+                                @error('emal')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </p>
-                            <p class="login-password">
-                                <label for="user_pass">Password</label>
-                                <input id="password" type="password" id="user_pass" class="input"  @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="current-password"  size="20" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                            </div>
+
+                            <div class="form-group ">
+                                <label for="">Password</label>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" placeholder="Password"  autocomplete="password" autofocus>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
 
-                            </p>
 
                             <p class="login-remember">
                                 <label><input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me</label>
                             </p>
-                            <p class="login-submit">
-                                <button type="submit" name="wp-submit" id="wp-submit" class="button button-primary">     {{ __('Login') }}</button>
-                            </p>
+
+                           <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                login
+                             </button>
+                           </div>
                         </form>
                     </div>
                     <div class="copyright">

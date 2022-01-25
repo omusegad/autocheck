@@ -24,5 +24,13 @@ class Matrix extends Model
     {
         return $this->belongsTo(Country::class, 'country_id', 'id');
     }
+    public function keyAction()
+    {
+        return $this->belongsTo(KeyAction::class, 'key_action_id', 'id');
+    }
+    public function pillar()
+    {
+        return $this->belongsTo(Pillar::class, 'pillars_id', 'id');
+    }
 
 }

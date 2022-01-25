@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MatrixRequest extends FormRequest
+class PillarRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,8 @@ class MatrixRequest extends FormRequest
     public function rules()
     {
         return [
-            'country_id'  => 'int|required',
-            'pillars_id'  => 'int|required',
-            'key_action_id'  => 'int|required',
-            'matrixType'  => 'string|required',
-            'status'  => 'string|required',
-            'priority'  => 'string|required',
+            'name'      => 'string|required',
+            "keyAction" => 'string|required',
         ];
     }
 }

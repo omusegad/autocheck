@@ -49,6 +49,16 @@
                     </a>
                     <ul>
                         <li>
+                            <a href="{{ route('pillars.index') }}">
+                                <i class="metismenu-icon"></i> Pillars
+                            </a>
+                        </li>
+                          <li>
+                            <a href="{{ route('keyaction.index') }}">
+                                <i class="metismenu-icon"></i> Key Action
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ route('matrix.index') }}">
                                 <i class="metismenu-icon"></i> Matrix
                             </a>
@@ -64,7 +74,8 @@
 
                 <li class="men-item">
                     <a  href="#">
-                        <i class="fas fa-flag icon"></i>Countries
+                        <i class="fas fa-flag icon"></i>
+                        Countries
                         <i class="fas fa-chevron-down down"></i>
                     </a>
                     <ul>

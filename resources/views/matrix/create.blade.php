@@ -36,10 +36,7 @@
                 <label for="">Matrix</label>
                 <input type="text" name="matrixType" class="form-control" placeholder="Enter Matrix" required>
             </div>
-            <div class="form-group col-lg-6">
-                <label for="">Year</label>
-                <input type="text" class="form-control" name="year" placeholder="year" required>
-             </div>
+          
             <div class="form-group col-lg-6">
                 <label for="">Choose Country</label>
                 <select class="form-control" name="country_id">
@@ -48,33 +45,38 @@
                     @endforeach
                 </select>
             </div>
-
-           <div class="form-group col-lg-6">
-                <label for="">Status</label>
-                <select class="form-control" name="status">
-                      <option value="inProgress">In Progress</option>
-                      <option value="seekingApproval">Seeking Approval</option>
-                      <option value="inDiscussion">In Discussion</option>
-                      <option value="established">Established</option>
-                      <option value="notFormulated">Not Formulated</option>
-                      <option value="formulated">Formulated</option>
-                      <option value="developed">Developed</option>
-                      <option value="notDeveloped">Not Developed</option>
+            <div class="form-group col-lg-6">
+                <label for="">Choose Pillar</label>
+                <select class="form-control" name="country_id">
+                        @foreach($pillars as $item)
+                        <option value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
                 </select>
             </div>
             <div class="form-group col-lg-6">
-                <label for="">Description</label>
-                <textarea class="form-control" name="description" id="" cols="30" rows="5" required></textarea>
+                <label for="">Choose Key Action</label>
+                <select class="form-control" name="country_id">
+                    @foreach($keyactions as $item)
+                      <option value="{{$item->id}}">{{$item->name}}</option>
+                    @endforeach
+                </select>
             </div>
-            <div class="form-group col-lg-6">
-               <div class="prio">
-                   <label for="">Priority</label>
-                    <select class="form-control" name="priority">
-                        <option value="low">low</option>
-                        <option value="high">High</option>
-                        <option value="medium">medium</option>
-                    </select>
-               </div>
+            <div class="form-group col-lg-12">
+                <div class="prio">
+                    <label for="">Priority</label>
+                     <select class="form-control" name="priority">
+                         <option value="low">low</option>
+                         <option value="high">High</option>
+                         <option value="medium">medium</option>
+                     </select>
+                </div>
+            </div>
+<div class="clearfix"></div>
+            <div class="form-group col-lg-12">
+                <label for="">Status</label>
+                <textarea class="form-control" name="status" id="" cols="30" rows="5" required></textarea>
+            </div>
+            <div class="form-group col-lg-12">
                <div class="submit-bx mt-4 text-right">
                  <button class="btn btn-info text-white font-weight-bold"> SUBMIT</button>
                </div>
