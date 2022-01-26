@@ -44,10 +44,7 @@ class PillarController extends Controller
                 'name' => $validated['name']
             ]
         );
-        KeyAction::create([
-            'name' => $validated['keyAction']
-        ]);
-        return back()->with('message', "Pillar created successfully!");
+        return back()->with('message', "Pillar added successfully!");
     }
 
     /**

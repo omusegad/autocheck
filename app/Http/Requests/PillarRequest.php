@@ -25,7 +25,6 @@ class PillarRequest extends FormRequest
     {
         return [
             'name'      => 'string|required',
-            "keyAction" => 'string|required',
         ];
     }
 }

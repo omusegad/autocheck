@@ -10,7 +10,7 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('public/js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,14 +20,14 @@
 
     <!-- Styles -->
 
-    <link href="{{ asset('public/css/owl.theme.default.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('public/css/main.min.css') }}"  rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/main.min.css') }}"  rel="stylesheet" type="text/css" />
 
 
-    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 </head>
 <body class="animsition">
@@ -46,14 +46,14 @@
 
     <script type="text/javascript" src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
 
-    <script type="text/javascript" src="{{ asset('public/js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/bootstrap.bundle.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
-    <script defer  type="text/javascript" src="{{ asset('public/js/owl.carousel.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/particles/particles.js') }}"></script>
+    <script defer  type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/particles/particles.js') }}"></script>
 
      <!-- apexcharts -->
-    <script type="text/javascript" src="{{ asset('public/js/main.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/main.min.js') }}"></script>
 
 
     <script>

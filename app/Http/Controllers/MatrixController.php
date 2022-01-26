@@ -49,10 +49,8 @@ class MatrixController extends Controller
      */
     public function store(MatrixRequest $request)
     {
-        // dd($request->all());
+       // dd($request->all());
         $validated = $request->validated();
-        dd( $validated);
-        
         Matrix::create($validated);
         return back()->with('message', "Matrix created successfully!");
     }

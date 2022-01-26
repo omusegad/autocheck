@@ -41,17 +41,8 @@
                                 </span>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <label for="">Key Action </label>
-                            <input type="text" name="keyAction" placeholder="key Action" class="form-control text-capitalize" required>
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
                         <div class="form-group text-right">
-                            <button class="btn btn-info font-weight-bold">Save</button>
+                            <button class="btn btn-info font-weight-bold">Add</button>
                         </div>
                     </form>
                 </div>

@@ -440,3 +440,6 @@
     overflow: hidden;
 }
 
+.close-btn {
+    margin-top: -38px;
+}

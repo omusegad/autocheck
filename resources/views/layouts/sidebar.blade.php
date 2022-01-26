@@ -53,11 +53,7 @@
                                 <i class="metismenu-icon"></i> Pillars
                             </a>
                         </li>
-                          <li>
-                            <a href="{{ route('keyaction.index') }}">
-                                <i class="metismenu-icon"></i> Key Action
-                            </a>
-                        </li>
+                       
                         <li>
                             <a href="{{ route('matrix.index') }}">
                                 <i class="metismenu-icon"></i> Matrix

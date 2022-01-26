@@ -37,7 +37,7 @@
                             <label for="">Choose Pillars</label>
                             @foreach ($pillar as $item)
                               <div class="form-check">
-                                <input class="form-check-input" value="{{$item->id}}" type="checkbox" value="" id="flexCheckDefault">
+                                <input class="form-check-input" name="pillars[]"  type="checkbox" value="{{$item->id}}" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                    {{ $item->name}}
                                 </label>
@@ -47,14 +47,14 @@
 
                         <div class="form-group">
                             <label for="">Key Action</label>
-                            <textarea class="form-control rounded-0" value="name" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            <textarea class="form-control rounded-0" name="description" id="exampleFormControlTextarea1" rows="5"></textarea>
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
-                        
+
                         <div class="form-group text-right">
                             <button class="btn btn-info font-weight-bold">Save</button>
                         </div>
@@ -68,3 +68,5 @@
 </div>
 
 @endsection
+
+

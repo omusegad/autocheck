@@ -17,7 +17,9 @@ class CreateMatricesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('country_id');
             $table->foreign('country_id')->references('id')->on('countries');
-            $table->unsignedBigInteger('key_action_id');
+            $table->unsignedBigInteger('pillar_id');
+            $table->foreign('pillar_id')->references('id')->on('pillars');
+            $table->longText('key_action');
             $table->longText('status');
             $table->enum('priority', ['low', 'high', 'medium'])->default('low');
             $table->timestamps();

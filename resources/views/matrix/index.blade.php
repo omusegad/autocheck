@@ -81,7 +81,7 @@
         @foreach ($matrix as $item)
             <tr>
                 <th>{{ $item->pillar['name'] ?? "" }}</th>
-                <td>{{ $item->keyAction['name'] ?? "" }} </td>
+                <td>{{ $item->key_action }} </td>
                 <td>{{ $item->country['name'] ?? "" }} </td>
                 <td>{{ $item->status }}</td>
                 <td>{{ $item->priority }}</td>

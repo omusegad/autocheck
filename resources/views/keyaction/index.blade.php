@@ -8,7 +8,7 @@
       <div class="row mb-2">
         <div class="col-lg-6">
             <div class="page-title-box  d-flex align-items-center justify-content-between">
-                <h4 class="mb-0"> KeyAction </h4>
+                <h4 class="mb-0"> Key Action </h4>
             </div>
         </div>
         <div class="col-lg-6 text-right">
@@ -24,7 +24,6 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>slug</th>
                         <th>Key Action</th>
                         <th>Action</th>
                     </tr>
@@ -37,7 +36,7 @@
                         @foreach ($keyActions as $item)
                         <tr>
                             <td scope="row">{{ $count++ }}</td>
-                            <td scope="row">{{ $item->name }}</td>
+                            <td scope="row">{{ $item->description }}</td>
                             <td>
                                 <span class="action-btns">
                                     <a class="edit-btn" href="{{ route('keyaction.edit', $item->id ) }}">

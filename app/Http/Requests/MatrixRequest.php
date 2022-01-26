@@ -25,9 +25,8 @@ class MatrixRequest extends FormRequest
     {
         return [
             'country_id'  => 'int|required',
-            'pillars_id'  => 'int|required',
-            'key_action_id'  => 'int|required',
-            'matrixType'  => 'string|required',
+            'pillar_id'  => 'int|required',
+            'key_action'  => 'string|required',
             'status'  => 'string|required',
             'priority'  => 'string|required',
         ];
