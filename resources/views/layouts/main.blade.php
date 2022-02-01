@@ -53,25 +53,31 @@
             </div>
     </div>
 
-    {{-- <script type="text/javascript" src="{{ asset('js/jquery-3.1.1.min.js') }}"></script> --}}
+    <script type="text/javascript" src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/particles/particles.js') }}"></script>
+
     <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
 
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/maps.js') }}"></script>
+
 
     <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+
 
     <script>
         //fiters
         jQuery(function($) {
-            dataTable = $("#matrix").DataTable({
+
+            dataTable = $("#matrix,#users,#pillar").DataTable({
                 "columnDefs": [{
                     "targets": [0],
-                    "visible": false
+                    "visible": true
                 }]
 
             });
@@ -100,13 +106,78 @@
                 $('.country-dropdown').val(country)
                 console.log(country)
                     //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
-                dataTable.column(1).search(country).draw();
+                dataTable.column(2).search(country).draw();
             })
+
+
         });
+
+
+        jQuery(function($) {
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 160,
+                    "density": {
+                        "enable": false
+                    }
+                },
+                "color": {
+                    "value": ["#ed4433", '#bfbfbf']
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "speed": 4,
+                        "size_min": 0.3
+                    }
+                },
+                // "shape": {
+                //     "type": ["circle", "polygon", "triangle", "hexagon"]
+                // },
+                "line_linked": {
+                    "enable": false
+                },
+                "move": {
+                    "random": true,
+                    "speed": 1,
+                    "direction": "top",
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "bubble"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "repulse"
+                    }
+                },
+                "modes": {
+                    "bubble": {
+                        "distance": 250,
+                        "duration": 2,
+                        "size": 0,
+                        "opacity": 0
+                    },
+                    "repulse": {
+                        "distance": 400,
+                        "duration": 4
+                    }
+                }
+            }
+        });
+    });
+
 
         window.addEventListener('load', function() {
             document.querySelector('.pre-loader').classList.add('is-loaded');
         });
+
     </script>
 
     @stack('custom')

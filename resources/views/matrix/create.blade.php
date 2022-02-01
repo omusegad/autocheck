@@ -1,10 +1,10 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="page-content">
-<div class="container-fluid">
+<div class="app-main__inner">
+    <div class="app-page-title">
       <!-- start page title -->
-      <div class="row">
+    <div class="row">
         <div class="col-lg-6">
             <div class="page-title-box d-flex align-items-center justify-content-between">
                 <h4 class="mb-0">Country Matrix </h4>
@@ -29,20 +29,13 @@
 
     <div class="row">
         <div class="col-lg-10">
+
+        <div class="card">
+            <div class="card-body">
         <form action="{{ route('matrix.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
-          
-            <div class="form-group col-lg-6">
-                <label for="">Choose Country</label>
-                <select class="form-control" name="country_id">
-                    <option disabled selected>Choose country</option>
-                    @foreach($country as $item)
-                      <option value="{{$item->id}}">{{$item->name}}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group col-lg-6">
+            <div class="form-group col-lg-12">
                 <label for="">Choose Pillar</label>
                 <select class="form-control" name="pillar_id">
                     <option disabled selected>Choose pillar</option>
@@ -51,7 +44,7 @@
                         @endforeach
                 </select>
             </div>
-         
+
             <div class="form-group col-lg-12">
                 <div class="prio">
                     <label for="">Priority</label>
@@ -65,11 +58,11 @@
             </div>
             <div class="form-group col-lg-12">
                 <label for="">Key Action</label>
-                <textarea class="form-control" name="key_action" id="" cols="30" rows="5" required></textarea>
+                <textarea class="form-control" placeholder="Enter Key Action " name="key_action" id="" cols="30" rows="5" required></textarea>
             </div>
             <div class="form-group col-lg-12">
                 <label for="">Status</label>
-                <textarea class="form-control" name="status" id="" cols="30" rows="5" required></textarea>
+                <textarea class="form-control" placeholder="Enter Status" name="status" id="" cols="30" rows="5" required></textarea>
             </div>
             <div class="form-group col-lg-12">
                <div class="submit-bx mt-4 text-right">
@@ -81,5 +74,9 @@
         </form>
     </div>
 </div>
+</div>
+    </div>
+</div>
+
 
 @endsection

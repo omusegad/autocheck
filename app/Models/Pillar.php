@@ -15,8 +15,4 @@ class Pillar extends Model
         'updated_at',
     ];
 
-    public function keyactions(){
-        return $this->belongsToMany(KeyAction::class, 'pillar_key_action', 'key_action_id','pillar_id');
-    }
-
 }

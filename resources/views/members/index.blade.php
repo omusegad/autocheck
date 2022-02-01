@@ -1,30 +1,25 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="page-content">
-<div class="container-fluid">
-      <!-- start page title -->
-      <div class="row">
+
+<div class="app-main__inner pb-5">
+    <div class="row mb-4">
         <div class="col-lg-6">
-            <div class="page-title-box  d-flex align-items-center justify-content-between">
-                <h4 class="mb-0"> Members </h4>
-            </div>
+         <h4>Users</h4>
         </div>
-        <div class="col-lg-6 text-right text-white">
-            <a class="text-info btn btn-outline-info" href="{{route('members.create')}}"> Add Members</a>
+        <div class="col-lg-6 text-right">
+          <a class="text-info btn btn-outline-info" href="{{route('register')}}"> Add User</a>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-sm m-0 bg-white">
+            <table id="users" class="table table-bordered table-hover table-striped data-tabl w-100">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Role</th>
                         <th>Email</th>
-                        <th>Role or Rovoke</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -36,20 +31,13 @@
                     <tr>
                         <th scope="row">{{ $count++ }}</th>
                         <td>{{ $user->name }}</td>
-                        <td>
-                            @if(!empty($user->getRoleNames()))
-                                @foreach($user->getRoleNames() as $v)
-                                   {{ $v }},
-                                @endforeach
-                            @endif
-                        </td>
                         <td>{{ $user->email }}</td>
-                        <td>
+                        {{-- <td>
                             <button type="button"  data-userid="{{  $user->id }}" class="btn btn-outline-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-sm">
                                 Asign
-                            </button>
+                            </button> --}}
                             <!--  Small modal example -->
-                            <div class="modal fade bs-example-modal-sm"  data-userid="{{  $user->id }}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            {{-- <div class="modal fade bs-example-modal-sm"  data-userid="{{  $user->id }}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-sm">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -84,8 +72,8 @@
                                         </div>
                                     </div><!-- /.modal-content -->
                                 </div><!-- /.modal-dialog -->
-                            </div><!-- /.modal -->
-                        </td>
+                            </div><!-- /.modal --> --}}
+                        {{-- </td> --}}
                         <td>
                             <span class="action-btns">
                                 <a class="edit-btn" href="{{ route('members.edit', $user->id ) }}">
@@ -109,5 +97,7 @@
     </div>
 
 </div>
+
+
 
 @endsection

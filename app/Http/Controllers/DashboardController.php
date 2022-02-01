@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Inertia\Inertia;
-use App\Models\Jobcard;
+use App\Models\User;
+use App\Models\Matrix;
+use App\Models\Pillar;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-       return view('dashboard');
+        $users = User::count();
+        $pillars = Pillar::count();
+        $matrix = Matrix::count();
+
+       return view('dashboard', compact('users','pillars','matrix'));
     }
 
 }

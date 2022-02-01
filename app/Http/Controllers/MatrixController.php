@@ -9,6 +9,7 @@ use App\Models\Country;
 use App\Models\KeyAction;
 use Illuminate\Http\Request;
 use App\Http\Requests\MatrixRequest;
+use Illuminate\Support\Facades\Auth;
 
 class MatrixController extends Controller
 {
@@ -20,11 +21,8 @@ class MatrixController extends Controller
     public function index()
     {
         $matrix = Matrix::all();
-        // dd($matrix);
-        $countries = Country::all();
         $pillars = Pillar::all();
-        $keyactions = KeyAction::all();
-        return view("matrix.index", compact('countries','matrix','pillars','keyactions'));
+        return view("matrix.index", compact('matrix','pillars'));
     }
 
     /**
@@ -49,8 +47,9 @@ class MatrixController extends Controller
      */
     public function store(MatrixRequest $request)
     {
-       // dd($request->all());
         $validated = $request->validated();
+        $validated['user_id'] = Auth::id();
+
         Matrix::create($validated);
         return back()->with('message', "Matrix created successfully!");
     }
@@ -76,7 +75,8 @@ class MatrixController extends Controller
     {
         $matrix  = Matrix::findorFail($id);
         $country = Country::all();
-        return view('matrix.edit', compact('matrix','country'));
+        $pillars = Pillar::all();
+        return view('matrix.edit', compact('matrix','country','pillars'));
     }
 
     /**
@@ -90,12 +90,11 @@ class MatrixController extends Controller
     {
         $matrix = Matrix::findorFail($id);
         $matrix->update([
-            'country_id'  => $request->country_id,
-            'matrixType'  => $request->matrixType,
-            'year'  => $request->year,
+            'user_id'  =>  Auth::id(),
+            'pillar_id'  => $request->pillar_id,
+            'key_action'  => $request->key_action,
             'status'  => $request->status,
             'priority'  => $request->priority,
-            'description'  => $request->description,
         ]);
         return back()->with('message', "Matrix updated successfully!");
     }

@@ -24,11 +24,10 @@ class MatrixRequest extends FormRequest
     public function rules()
     {
         return [
-            'country_id'  => 'int|required',
-            'pillar_id'  => 'int|required',
-            'key_action'  => 'string|required',
-            'status'  => 'string|required',
-            'priority'  => 'string|required',
+            'pillar_id'       => 'int|required',
+            'key_action'      => 'string|required',
+            'status'          => 'string|required',
+            'priority'        => 'string|required',
         ];
     }
 }

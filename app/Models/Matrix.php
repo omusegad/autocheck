@@ -15,18 +15,17 @@ class Matrix extends Model
         'updated_at',
     ];
 
-    /**
-     * Get the user that owns the Matrix
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function country()
-    {
-        return $this->belongsTo(Country::class, 'country_id', 'id');
-    }
+
     public function pillar()
     {
         return $this->belongsTo(Pillar::class, 'pillar_id', 'id');
     }
+
+    
+    public function user()
+    {
+        return $this->belongsTo(user::class, 'user_id', 'id');
+    }
+   
 
 }

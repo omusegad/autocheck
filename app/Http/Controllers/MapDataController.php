@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pillar;
-use App\Models\KeyAction;
+use App\Models\Matrix;
 use Illuminate\Http\Request;
-use App\Http\Requests\PillarRequest;
 
-class PillarController extends Controller
+class MapDataController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,12 @@ class PillarController extends Controller
      */
     public function index()
     {
-        $pillars = Pillar::all();
-        return view('pillar.index',compact('pillars'));
+
+
+        $data = Matrix::latest()->get()->groupBy('country');
+       // dd($data);
+
+        return view('map.index', compact("data"));
     }
 
     /**
@@ -27,7 +29,7 @@ class PillarController extends Controller
      */
     public function create()
     {
-        return view('pillar.create');
+        //
     }
 
     /**
@@ -36,15 +38,9 @@ class PillarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PillarRequest $request)
+    public function store(Request $request)
     {
-        $validated = $request->validated();
-        Pillar::create(
-            [
-                'name' => $validated['name']
-            ]
-        );
-        return back()->with('message', "Pillar added successfully!");
+        //
     }
 
     /**
@@ -66,8 +62,7 @@ class PillarController extends Controller
      */
     public function edit($id)
     {
-        $pillar  = Pillar::findorFail($id);
-        return view('pillar.edit', compact('pillar'));
+        //
     }
 
     /**
@@ -79,11 +74,7 @@ class PillarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pillar = Pillar::findorFail($id);
-        $pillar->update([
-            'name'  => $request->name,
-        ]);
-        return back()->with('message', "Pillar updated successfully!");
+        //
     }
 
     /**
@@ -94,8 +85,6 @@ class PillarController extends Controller
      */
     public function destroy($id)
     {
-        $pillar = Pillar::findorFail($id);
-        $pillar->delete();
-        return back()->with('message', "Pillar deleted successfully!");
+        //
     }
 }

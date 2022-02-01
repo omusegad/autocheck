@@ -15,10 +15,9 @@ class CreateMatricesTable extends Migration
     {
         Schema::create('matrices', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('country_id');
-            $table->foreign('country_id')->references('id')->on('countries');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('pillar_id');
-            $table->foreign('pillar_id')->references('id')->on('pillars');
             $table->longText('key_action');
             $table->longText('status');
             $table->enum('priority', ['low', 'high', 'medium'])->default('low');

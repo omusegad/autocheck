@@ -16,8 +16,8 @@ class CountriesController extends Controller
      */
     public function index()
     {
-        $countries = Country::all();
-        return view("countries.index", compact('countries'));
+        $map_data = Matrix::all();
+        return view("countries.index", compact('data'));
     }
 
     /**

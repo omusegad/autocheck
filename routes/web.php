@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\MatrixController;
 use App\Http\Controllers\PillarController;
+use App\Http\Controllers\MapDataController;
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\KeyActionControler;
 use App\Http\Controllers\AsignRoleController;
@@ -36,6 +37,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('permission',[PermissionController::class, 'store'])->name('permission.store');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('countries', CountriesController::class);
+    Route::resource('map-data', MapDataController::class);
+
 
 });
 

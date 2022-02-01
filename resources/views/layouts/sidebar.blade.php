@@ -53,7 +53,7 @@
                                 <i class="metismenu-icon"></i> Pillars
                             </a>
                         </li>
-                       
+
                         <li>
                             <a href="{{ route('matrix.index') }}">
                                 <i class="metismenu-icon"></i> Matrix
@@ -69,25 +69,10 @@
                 </li>
 
                 <li class="men-item">
-                    <a  href="#">
-                        <i class="fas fa-flag icon"></i>
-                        Countries
-                        <i class="fas fa-chevron-down down"></i>
+                    <a href="{{ route('map-data.index') }}">
+                        <i class="fas fa-tachometer-alt icon"></i>
+                        <span>{{ __('Mapped Data') }}</span>
                     </a>
-                    <ul>
-                        <li>
-                            <a href="{{ route('countries.index') }}">
-                                <i class="metismenu-icon"></i> Countries
-                            </a>
-                        </li>
-                        <li>
-
-                            <a href="{{ route('countries.create') }}">
-                                <i class="metismenu-icon">
-                                </i>Add Countries
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
                 <li class="men-item">
@@ -102,11 +87,11 @@
                                 <i class="metismenu-icon"></i> Users
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('roles.index') }}">
                                 <span>{{ __('Manage Roles') }}</span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="{{ route('register') }}">
                                 <i class="metismenu-icon">
