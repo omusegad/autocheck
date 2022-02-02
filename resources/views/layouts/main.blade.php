@@ -91,7 +91,16 @@
                 })
                 dataTable.column(4).search(searchTerms.join('|'), true, false, true).draw();
             });
-
+            
+            $('.filter-checkbox-c').on('change', function(e) {
+                var searchTerms = []
+                $.each($('.filter-checkbox-c'), function(i, elem) {
+                    if ($(elem).prop('checked')) {
+                        searchTerms.push("^" + $(this).val() + "$")
+                    }
+                })
+                dataTable.column(3).search(searchTerms.join('|'), true, false, true).draw();
+            });
 
             $('.pillar-dropdown').on('change', function(e) {
                 var pillar = $(this).val();

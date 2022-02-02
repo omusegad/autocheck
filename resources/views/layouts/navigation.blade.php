@@ -53,8 +53,8 @@
                                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                         @endif
                                     @else
-                                        <button type="button" tabindex="0" class="dropdown-item">User Profile</button>
-                                        <button type="button" tabindex="0" class="dropdown-item">Settings</button>
+                                        <a href="{{ route('members.edit',Auth::id() ) }}" type="button" tabindex="0" class="dropdown-item">Profile</a>
+                                        {{-- <button type="button" tabindex="0" class="dropdown-item">Settings</button> --}}
 
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();

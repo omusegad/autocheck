@@ -11,7 +11,7 @@
                     </div>
                     <div>DCoC NFP Capacity Building Matrix
                         <div class="page-title-subheading">
-                            A Small description of the page
+                           All data matrice for all countries
                         </div>
                     </div>
                 </div>
@@ -23,6 +23,7 @@
 
         <div class="content pb-4">
             <div class="row">
+                
                 <div class="col-3">
                     <div class="btn-group submitter-group">
                         <div class="input-group-prepend">
@@ -91,7 +92,7 @@
                         <select class="form-control pillar-dropdown">
                             <option value="">All</option>
                             @foreach ($pillars  as $item)
-                            <option value="{{$item->name}}">{{$item->name}}</option>
+                              <option value="{{$item->name}}">{{$item->name}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -116,6 +117,7 @@
         <table id="matrix" class="table table-bordered table-hover table-striped data-tabl w-100">
             <thead>
                 <tr>
+                    <th>Created At</th>
                     <th>Pillar</th>
                     <th>Key Action</th>
                     <th>Country</th>
@@ -130,9 +132,12 @@
             @endphp
             @foreach ($matrix as $item)
                 <tr>
-                    <th>{{ $item->pillar['name'] ?? "" }}</th>
+                    <th>{{ $item->created_at}}</th>
+                    <th class="text-capitalize">{{ $item->pillar['name'] ?? "" }}</th>
                     <td>{{ $item->key_action }} </td>
-                    <td>{{ $item->user['country'] ?? "" }} </td>
+                    <td>
+                        <a class="edit-btn" href="{{ route('by-country', $item->country_symbol ) }}">  {{ $item->country }}</a>
+                    </td>
                     <td>{{ $item->status }}</td>
                     <td>{{ $item->priority }}</td>
                     <td>
@@ -141,13 +146,37 @@
                                 <i class="far fa-edit"></i>
                             </a>
                         </span>
+                        @if(Auth::user()->role == "superAdmin")
                         <span class="action-btns">
-                            <form action="{{ route('matrix.destroy', $item->id) }}" id="form_delete_post_{{ $item->id }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="text-danger"> <i class="fa fa-trash"></i></button>
-                            </form>
+                            <button type="button" class="delete-btn text-danger" data-toggle="modal" data-target="#delete_post_{{ $item->id }}">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                            <div class="modal fade" id="delete_post_{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <form action="{{ route('matrix.destroy', $item->id) }}" id="form_delete_post_{{ $item->id }}" method="post">
+                                        @csrf
+                                        @method('DELETE');
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Delete Confirmation</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure want to delete "<b>{{ $item->pillar['name'] }}</b>" ?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                                <button type="submit" class="btn btn-danger">Yes! Delete It</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </span>
+                        @endif
+
                     </td>
                 </tr>
             @endforeach

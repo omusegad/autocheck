@@ -57,6 +57,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'country' => ['required', 'string'],
+            'role' => ['required', 'string'],
         ]);
     }
 
@@ -71,11 +72,19 @@ class RegisterController extends Controller
         $country_data = explode('-', $data['country']);
         return User::create([
             'name' => $data['name'],
+            'role' => $data['role'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'country_symbol' => strtoupper($country_data[0]),
-            'country' => ucwords($country_data[1])
+            'country' => ucwords($country_data[1]),
+            'phoneNumber' => $data['phoneNumber'],
+            'date_signed_the_dcoc' => $data['date_signed_the_dcoc'],
+            'date_signed_the_ja' => $data['date_signed_the_ja'],
+            'stateDesignation' => $data['stateDesignation'],
+            'national_focal_point' => $data['national_focal_point'],
+            'job_title' =>$data['job_title'],
         ]);
+
     }
 
     public function register(Request $request)
@@ -89,7 +98,6 @@ class RegisterController extends Controller
         }
 
         $this->create($request->all());
-
         return redirect('/register'); // Change this route to your needs
     }
 

@@ -8,8 +8,10 @@ use App\Models\Pillar;
 use App\Models\Country;
 use App\Models\KeyAction;
 use Illuminate\Http\Request;
+use App\Mail\MatrixNotification;
 use App\Http\Requests\MatrixRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class MatrixController extends Controller
 {
@@ -20,7 +22,7 @@ class MatrixController extends Controller
      */
     public function index()
     {
-        $matrix = Matrix::all();
+        $matrix = Matrix::latest()->orderBy('created_at')->get();
         $pillars = Pillar::all();
         return view("matrix.index", compact('matrix','pillars'));
     }
@@ -48,9 +50,16 @@ class MatrixController extends Controller
     public function store(MatrixRequest $request)
     {
         $validated = $request->validated();
+        $data = explode('-', $validated['country']);
+        $validated['country_symbol'] = strtoupper($data[0]);
+        $validated['country'] = ucwords($data[1]);
         $validated['user_id'] = Auth::id();
 
-        Matrix::create($validated);
+        $data = Matrix::create($validated);
+        if($data){
+            Mail::to(env('omusegad@gmail.com'))->send(new MatrixNotification($data));
+        }
+       
         return back()->with('message', "Matrix created successfully!");
     }
 
@@ -74,9 +83,8 @@ class MatrixController extends Controller
     public function edit($id)
     {
         $matrix  = Matrix::findorFail($id);
-        $country = Country::all();
         $pillars = Pillar::all();
-        return view('matrix.edit', compact('matrix','country','pillars'));
+        return view('matrix.edit', compact('matrix','pillars'));
     }
 
     /**
@@ -87,15 +95,20 @@ class MatrixController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {        
         $matrix = Matrix::findorFail($id);
+        $data = explode('-', $request['country']);
         $matrix->update([
             'user_id'  =>  Auth::id(),
             'pillar_id'  => $request->pillar_id,
             'key_action'  => $request->key_action,
             'status'  => $request->status,
-            'priority'  => $request->priority,
+            'priority'  => $request->priority ?? $matrix->priority,
+            'country_symbol' => strtoupper($data[0]) ??  $matrix->country_symbol,
+            'country' => ucwords($data[1]) ??  $matrix->country,
+            'user_id' => Auth::id()
         ]);
+     
         return back()->with('message', "Matrix updated successfully!");
     }
 

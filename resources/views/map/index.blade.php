@@ -21,6 +21,7 @@
         <div class="content pb-4 maps">
             <div class="row">
                 <div class="col-md-7">
+                    <a href="#" id="stateurl">
                     <svg xmlns:mapsvg="http://mapsvg.com" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"
                         mapsvg:geoviewbox="-25.360994 37.343521 59.838547 -34.833225" id="svg2" version="1.1" preserveAspectRatio="xMidYMid meet" viewBox="0 0 239.05701 217.31789" style="/*! transform: scale(1); */">
                         <metadata id="metadata263">
@@ -112,115 +113,24 @@
                         <path d="m 300.929,77.61474 0.184,0.25231 0.026,1.70983 0.042,0.12162 -0.098,0.0181 -0.11,0.12967 -0.129,0.20003 -0.177,0.10354 -0.142,0.1166 -0.134,0.14475 -0.12,0.0312 -0.155,-0.18395 -0.107,-0.18797 0.026,-0.0412 0.075,-0.0131 0.028,-0.0975 -0.045,-0.14073 -0.105,-0.0532 -0.132,-0.004 -0.127,0.0633 -0.135,0.12464 -0.076,0.13369 -0.011,0.26839 0.035,0.30155 -0.001,0.14676 -0.074,0.18195 -0.026,0.26737 0.053,0.20707 0.048,0.12364 0.005,0.10454 -0.126,0.3297 0.109,0.0623 0.361,0.0231 0.106,0.22315 0.072,0.15279 -0.02,0.0905 -0.256,0.0673 -0.322,0.0744 -0.231,-0.0211 -0.418,0.10052 -0.223,0.1548 0.065,0.0965 0.077,0.0744 0.035,0.20406 -0.065,0.2895 -0.118,0.28044 -0.147,0.34981 -0.17,0.40107 -0.233,0.60312 -0.197,0.47344 -0.021,0.34076 0.005,0.22215 -0.022,0.44329 -0.187,0.24426 -0.042,0.007 -0.223,-0.0292 -0.075,-0.0101 -0.213,-0.0282 -0.33,-0.0433 -0.429,-0.0573 -0.507,-0.0663 -0.565,-0.0754 -0.604,-0.0804 -0.625,-0.0824 -0.624,-0.0824 -0.605,-0.0804 -0.565,-0.0744 -0.507,-0.0673 -0.428,-0.0573 -0.33,-0.0433 -0.213,-0.0282 -0.075,-0.0101 -0.236,-0.0312 -0.127,-0.16484 -0.154,-0.19904 -0.155,-0.20003 -0.154,-0.20003 -0.154,-0.20003 -0.154,-0.20003 -0.154,-0.20004 -0.154,-0.20004 -0.154,-0.20003 -0.154,-0.20104 -0.154,-0.20003 -0.155,-0.20104 -0.154,-0.20104 -0.154,-0.20103 -0.154,-0.20104 -0.154,-0.20104 -0.154,-0.20104 -0.104,-0.1347 -0.057,-0.15178 -0.011,-0.39806 0,-0.0875 0.104,-0.16083 0.05,0.11459 0.116,0.1558 0.197,-0.0381 0.092,0.0262 0.068,0.55185 0.145,0.19601 0.176,0.0784 0.597,0.0433 0.371,-0.0744 0.731,-0.35985 0.384,-0.12968 1.062,0.0221 0.851,0.14977 1.325,0.0885 0.257,-0.0231 0.715,-0.2895 0.438,-0.25532 0.261,-0.0734 0.172,-0.24728 0.113,-0.32166 0.101,-0.21009 0.129,-0.10052 0.122,-0.17893 0.099,-0.29049 0.246,-0.29352 0.986,-0.71469 0.576,-0.60513 0.051,-0.19601 0.313,-0.29352 0.251,-0.32166 1.175,-0.92075 0.235,-0.38097 0.139,-0.42721 0.017,-0.0302 0.101,-0.0181 0.144,0.0643 0.015,0.31965 -0.053,0.30156 -0.006,0.31966 -0.021,0.17288 0.109,0.14174 0.186,0.0613 0.081,-0.007 0.048,-0.0714 z m -0.046,1.28967 0.017,-0.1337 -0.029,-0.0693 -0.12,-0.009 -0.05,0.11559 -0.017,0.16586 0.083,0.0141 0.116,-0.0834 z m -5.096,2.45065 -0.025,0.0603 -0.079,-0.005 -0.198,-0.0542 -0.064,-0.0865 0.124,-0.10353 0.055,-0.005 0.079,0.10856 0.108,0.0855 z m -3.181,0.56693 -0.208,0.0171 -0.188,-0.1166 0.397,-0.15581 0.107,-0.0703 0.116,-0.14374 0.093,0.12364 -0.103,0.194 -0.073,0.0834 -0.141,0.0683 z m -2.008,-0.0915 -0.047,0.0221 -0.05,-0.16586 0.003,-0.0522 0.129,-0.0754 0.079,0.1357 -0.114,0.1357 z m 3.679,0.34177 0.001,0.10453 -0.285,-0.0302 -0.076,0.0542 -0.234,-0.0302 -0.229,-0.0754 0.155,-0.12565 0.404,-0.14777 0.168,0.1347 0.096,0.1156 z" title="Maldives" id="MA" class="mapsvg-region active-state" style="fill: rgb(224, 101, 101); stroke: rgb(247, 247, 247); stroke-width: 0.389767px;"></path>
                         </g>
                     </svg>
+                </a>
                 </div>
                 <div class="col-md-5 d-flex align-items-center py-5">
-
                     <ul class="list-of-states">
                         @foreach ($data as $item)
-                            <li data-state="{{$item[0]["country_symbol"]}}" class="hover-1">
+                            <li data-state="{{$item->country_symbol}}" class="hover-1">
+                                <a href=""></a>
                                 <div class="card">
-                                    <h3>{{$item[0]["country"]}}</h3>
+                                    <h3>{{$item->country}}</h3>
                                     <p>
-                                          <span class="d-block"> {{$item[0]["country"]}}</span>
-                                          <span class="d-block"> {{$item[0]["priority"]}}</span>
-                                          <span class="d-block"> {{$item[0]["pillar"]["name"]}}</span>
-                                          <span class="d-block"> {{$item[0]["status"]}}</span>
-                                          <span class="d-block"> {{$item[0]["key_action"]}}</span>
+                                          <span class="d-block"> {{$item["priority"] ?? ""}}</span>
+                                          <span class="d-block"> {{$item->pillar["name"] ?? ""}}</span>
+                                          <span class="d-block"> {{$item->status}}</span>
+                                          <span class="d-block"> {{$item->key_action}}</span>
                                     </p>
                                 </div>
                             </li>
                         @endforeach
-
-                        {{-- <li data-state="TZ" class="hover-2">
-                            <div class="card">
-                                <h3>Tanzania</h3>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, nihil incidunt! Quaerat nihil sapiente rerum fugit soluta dolorem commodi quisquam pariatur. Labore ducimus, dignissimos fugiat ut deleniti
-                                    quasi porro atque vero maiores, sequi, incidunt voluptatum dolores inventore? Sit omnis molestiae at itaque fugit pariatur nam praesentium impedit aliquam? Dolorem, doloremque.</p>
-                            </div>
-                        </li>
-                        <li data-state="ET" class="hover-3">
-                            <div class="card">
-                                <h3>Ethiopia</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quo veniam sunt laborum dignissimos laboriosam, aliquam nihil, totam veritatis quis commodi tenetur architecto. Quia consequatur explicabo saepe
-                                    necessitatibus deserunt eos, aspernatur expedita quis nobis molestiae ex cum atque fugiat porro?</p>
-                            </div>
-                        </li>
-
-                        <li data-state="SO" class="hover-4">
-                            <div class="card">
-                                <h3>Somalia</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed cumque laboriosam libero rerum rem omnis dolores, tempora nihil. Voluptas modi beatae rem maxime excepturi aut harum, facilis veniam sequi asperiores
-                                    iste perspiciatis, minima soluta omnis ipsum cupiditate nulla quam, nisi exercitationem placeat iusto suscipit.</p>
-                            </div>
-                        </li>
-
-                        <li data-state="SD" class="hover-5">
-                            <div class="card">
-                                <h3>Sudan</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, excepturi magnam suscipit voluptatum incidunt, itaque expedita harum, eum perferendis reprehenderit nobis ipsum. Iste voluptatibus vel recusandae
-                                    doloremque maxime facilis omnis commodi aspernatur hic nam sed, fuga cupiditate velit!</p>
-                            </div>
-                        </li>
-
-                        <li data-state="SA" class="hover-6">
-                            <div class="card">
-                                <h3>Saudi Arabia</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem facere atque sint praesentium repellat laudantium quo quam optio sunt maiores! molestiae ex cum atque fugiat porro?</p>
-                            </div>
-                        </li>
-
-                        <li data-state="YE" class="hover-7">
-                            <div class="card">
-                                <h3>Yemen</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, minus incidunt similique consectetur voluptatibus ea nobis aliquam nihil exercitationem quod deleniti? Vitae cum natus tempora nulla earum,
-                                    consectetur dolor sunt dolorem suscipit, temporibus non eaque commodi quia ipsum soluta sed, magnam eligendi! Qui, aut magnam.</p>
-                            </div>
-                        </li>
-
-                        <li data-state="OM" class="hover-8">
-                            <div class="card">
-                                <h3>Oman</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quo veniam sunt laborum dignissimos laboriosam, aliquam nihil, totam veritatis quis commodi tenetur architecto. Quia consequatur explicabo saepe
-                                    necessitatibus deserunt eos, aspernatur expedita quis nobis molestiae ex cum atque fugiat porro?</p>
-                            </div>
-                        </li>
-
-                        <li data-state="JO" class="hover-9">
-                            <div class="card">
-                                <h3>Jordan</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quae, a in vel id aliquam eaque. Ducimus saepe similique enim!r expedita quis nobis molestiae ex cum atque fugiat porro?</p>
-                            </div>
-                        </li>
-
-                        <li data-state="EG" class="hover-10">
-                            <div class="card">
-                                <h3>Egypt</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quo veniam sunt laborum dignissimos laboriosam, aliquam nihil, totam veritatis quis commodi tenetur architecto. Quia consequatur explicabo saepe
-                                    necessitatibus deserunt eos, aspernatur expedita quis nobis molestiae ex cum atque fugiat porro?</p>
-                            </div>
-                        </li>
-                        <li data-state="MZ" class="hover-11">
-                            <div class="card">
-                                <h3>Mozambique</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quo veniam sunt laborum dignissimos laboriosam, aliquam nihil, totam veritatis quis commodi tenetur architecto. Quia consequatur explicabo saepe
-                                    necessitatibus deserunt eos, aspernatur expedita quis nobis molestiae ex cum atque fugiat porro?</p>
-                            </div>
-                        </li>
-                        <li data-state="ZA" class="hover-12">
-                            <div class="card">
-                                <h3>South Africa</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quo veniam sunt laborum dignissimos laboriosam, aliquam nihil, totam veritatis quis commodi tenetur architecto. Quia consequatur explicabo saepe
-                                    necessitatibus deserunt eos, aspernatur expedita quis nobis molestiae ex cum atque fugiat porro?</p>
-                            </div>
-                        </li>
-                        <li data-state="MG" class="hover-13">
-                            <div class="card">
-                                <h3>Madagascar</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quo veniam sunt laborum dignissimos laboriosam, aliquam nihil, totam veritatis quis commodi tenetur architecto. Quia consequatur explicabo saepe
-                                    necessitatibus deserunt eos, aspernatur expedita quis nobis molestiae ex cum atque fugiat porro?</p>
-                            </div>
-                        </li> --}}
-
                     </ul>
                 </div>
             </div>
@@ -228,4 +138,20 @@
 
     </div>
 
+    @push('custom')
+      <script>
+        svgStates.forEach(function(el) {
+            el.addEventListener("mouseenter", function() {
+                addOnFromState(el);
+                var statename = el.getAttribute("id");
+                //alert(statename);
+                var statelink = statename.toLowerCase();
+
+                var a = document.getElementById('stateurl');
+              //  a.href = statelink + '.html';
+                a.href = 'by-country/' + statename;
+            });
+        });
+    </script>
+    @endpush
 @endsection

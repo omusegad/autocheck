@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Matrix;
+use App\Models\Pillar;
 use App\Models\Country;
 use Illuminate\Http\Request;
 use App\Http\Requests\CountryRequest;
@@ -52,10 +53,10 @@ class CountriesController extends Controller
      */
     public function show($id)
     {
-        $country = Country::findorFail($id);
-        $matrix = Matrix::where('country_id', $country->id)->get();
-        // dd($matrix);
-        return view('countries.show', compact('country','matrix'));
+        dd($id);
+
+        $matrix = Matrix::where('country_symbol', $id)->get();
+        return view('countries.show', compact('matrix'));
     }
 
     /**
@@ -97,5 +98,13 @@ class CountriesController extends Controller
         $branch = Country::findorFail($id);
         $branch->delete();
         return back()->with('message', "country deleted successfully!");
+    }
+
+    public function symbol($id)
+    {
+       // dd($id);
+        $pillars = Pillar::all();
+        $data = Matrix::where('country_symbol', $id)->get();
+        return view('countries.show', compact('data','pillars'));
     }
 }

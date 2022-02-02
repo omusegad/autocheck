@@ -39,6 +39,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('countries', CountriesController::class);
     Route::resource('map-data', MapDataController::class);
 
+    Route::get('by-country/{ke}/', [CountriesController::class,'symbol'])->name("by-country");
 
 });
 

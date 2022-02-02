@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Matrix;
+use App\Models\Pillar;
+use App\Models\KeyAction;
+use App\Models\MappedData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\MappDataRequest;
 
 class MapDataController extends Controller
 {
@@ -14,11 +19,7 @@ class MapDataController extends Controller
      */
     public function index()
     {
-
-
-        $data = Matrix::latest()->get()->groupBy('country');
-       // dd($data);
-
+        $data = MappedData::with('user','pillar')->get();
         return view('map.index', compact("data"));
     }
 
@@ -29,7 +30,10 @@ class MapDataController extends Controller
      */
     public function create()
     {
-        //
+        $pillars = Pillar::all();
+        $keyactions = KeyAction::all();
+
+        return view("map.create", compact('pillars','keyactions'));
     }
 
     /**
@@ -38,9 +42,17 @@ class MapDataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MappDataRequest $request)
     {
-        //
+        $pillars = Pillar::all();
+        $validated = $request->validated();
+        $data = explode('-', $validated['country']);
+        $validated['country_symbol'] = strtoupper($data[0]);
+        $validated['country'] = ucwords($data[1]);
+        $validated['user_id'] = Auth::id();
+
+        MappedData::create($validated);
+        return back()->with('message', "Matrix created successfully!");
     }
 
     /**

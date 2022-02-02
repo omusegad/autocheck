@@ -50,7 +50,8 @@ class MembersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user  = User::findorFail($id);
+        return view('members.show', compact('user'));
     }
 
     /**
@@ -77,10 +78,17 @@ class MembersController extends Controller
         $user = User::findorFail($id);
         $user->update([
             'name' =>  $request->name,
-            'email' =>$request->email,
             'password' => $request->password ?  $user->password : Hash::make($request->password),
+            'country_symbol' => strtoupper($request[0]),
+            'country' => ucwords($request[1]),
+            'phoneNumber' => $request['phoneNumber'],
+            'date_signed_the_dcoc' => $request['date_signed_the_dcoc'],
+            'date_signed_the_ja' => $request['date_signed_the_ja'],
+            'stateDesignation' => $request['stateDesignation'],
+            'national_focal_point' => $request['national_focal_point'],
+            'job_title' =>$request['job_title'],
         ]);
-        return back()->with('message', "Member updated successfully!");
+        return back()->with('message', "Record updated successfully!");
 
     }
 
