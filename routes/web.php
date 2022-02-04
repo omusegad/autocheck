@@ -12,6 +12,7 @@ use App\Http\Controllers\KeyActionControler;
 use App\Http\Controllers\AsignRoleController;
 use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AllMapedDataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,6 @@ use App\Http\Controllers\DashboardController;
 */
 Auth::routes();
 
-
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('home');
     Route::resource('matrix', MatrixController::class);
@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('countries', CountriesController::class);
     Route::resource('map-data', MapDataController::class);
+    Route::get('/all-mapped-data', [AllMapedDataController::class, "index"])->name("all-mapped-data.index");
 
     Route::get('by-country/{ke}/', [CountriesController::class,'symbol'])->name("by-country");
 

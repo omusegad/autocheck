@@ -32,7 +32,6 @@ class MapDataController extends Controller
     {
         $pillars = Pillar::all();
         $keyactions = KeyAction::all();
-
         return view("map.create", compact('pillars','keyactions'));
     }
 
@@ -44,7 +43,6 @@ class MapDataController extends Controller
      */
     public function store(MappDataRequest $request)
     {
-        $pillars = Pillar::all();
         $validated = $request->validated();
         $data = explode('-', $validated['country']);
         $validated['country_symbol'] = strtoupper($data[0]);
@@ -52,19 +50,9 @@ class MapDataController extends Controller
         $validated['user_id'] = Auth::id();
 
         MappedData::create($validated);
-        return back()->with('message', "Matrix created successfully!");
+        return back()->with('message', "Country data created successfully!");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -74,7 +62,8 @@ class MapDataController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = MappedData::findorFail($id);
+        return view("map.edit", compact('data'));
     }
 
     /**
@@ -86,7 +75,17 @@ class MapDataController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = MappedData::findorFail($id);
+
+        $data = explode('-', $request['country']);
+        $matrix->update([
+            'status'  => $request->status,
+            'country_symbol' => strtoupper($data[0]) ??  $data->country_symbol,
+            'country' => ucwords($data[1]) ??  $data->country,
+            'user_id' => Auth::id()
+        ]);
+
+        return back()->with('message', "Country data updated successfully!");
     }
 
     /**
@@ -97,6 +96,8 @@ class MapDataController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $map = MappedData::findorFail($id);
+        $map->delete();
+        return back()->with('message', "Country data deleted successfully!");
     }
 }

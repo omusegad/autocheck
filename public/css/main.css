@@ -6235,12 +6235,10 @@ a.close.disabled {
 }
 
 .modal-backdrop.fade {
-    opacity: 0
+    opacity: 0;
+    display:none;
 }
 
-.modal-backdrop.show {
-    opacity: .5
-}
 
 .modal-header {
     display: flex;

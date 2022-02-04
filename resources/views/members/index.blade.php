@@ -5,26 +5,26 @@
 <div class="app-main__inner pb-5">
     <div class="row mb-4">
         <div class="col-lg-6">
-         <h4>Users</h4>
+         <h4>NFPs</h4>
         </div>
         <div class="col-lg-6 text-right">
             @if(Auth::user()->role == "superAdmin")
-                <a class="text-info btn btn-outline-info" href="{{route('register')}}"> Add User</a>
+                <a class="text-info btn btn-outline-info" href="{{route('register')}}"> Add NFP</a>
             @endif
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-            <table id="users" class="table table-bordered table-hover table-striped data-tabl w-100">
+            <table id="matrix" class="table table-bordered table-hover table-striped data-table w-100">
                 <thead>
                     <tr>
                         <th>Created At</th>
-                        <th>Name</th>
                         <th>Country</th>
-                        <th>Phone Number</th>
-                        <th>Role</th>
+                        <th>NFP Name</th>
+                        <th>Job Title</th>
                         <th>Email</th>
+                        <th>Phone Number</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -35,11 +35,11 @@
                     @foreach ($users as $user)
                     <tr>
                         <th>{{ $user->created_at }}</th>
-                        <td> <a href="{{ route('members.edit', $user->id ) }}">{{ $user->name }} </a> </td>
                         <th>{{ $user->country }}</th>
-                        <td>{{ $user->phoneNumber }}</td>
-                        <td>{{ $user->role }}</td>
+                        <td> <a href="{{ route('members.edit', $user->id ) }}">{{ $user->name }} </a> </td>
+                        <td>{{ $user->job_title }}</td>
                         <td>{{ $user->email }}</td>
+                        <td>{{ $user->phoneNumber }}</td>
                         <td>
                             @if(Auth::user()->role == "superAdmin")
                             <span class="action-btns">

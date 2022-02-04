@@ -18,7 +18,7 @@
                 Edit {{ $user->name}}
             </div>
             <div class="col-lg-6 text-right">
-                <a class="text-info btn btn-outline-info" href="{{route("members.index")}}">Users</a>
+                <a class="text-info btn btn-outline-info" href="{{route("members.index")}}">View NFPs</a>
             </div>
         </div>
         <form action="{{ route('members.update',$user->id ) }}" method="POST" enctype="multipart/form-data">

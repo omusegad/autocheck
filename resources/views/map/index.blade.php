@@ -1,19 +1,25 @@
+
 @extends('layouts.main')
 
 @section('content')
 
     <div class="app-main__inner pb-3">
         <div class="app-page-title">
-            <div class="page-title-wrapper">
-                <div class="page-title-heading">
-                    <div class="page-title-icon">
-                        <i class="fas fa-flag icon"></i>
-                    </div>
-                    <div>Maps
-                        <div class="page-title-subheading">
-                            An overview of the top latest matrix Key Action and status in the available countries
+            <div class="row mb-4">
+                <div class="col-lg-6">
+                    <div class="page-title-heading">
+                        <div class="page-title-icon">
+                            <i class="fas fa-database icon"></i>
+                        </div>
+                        <div>Mapped Data
+                            <div class="page-title-subheading">
+                                An overview of the top latest matrix Key Action and status in the available countries
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-6 text-right text-white">
+                    <a class="text-info btn btn-outline-info" href="{{route('all-mapped-data.index')}}"> Edit Maped Data</a>
                 </div>
             </div>
         </div>

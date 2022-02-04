@@ -92,20 +92,20 @@
                 @if(Auth::user()->role == "superAdmin")
                 <li class="men-item">
                     <a href="#">
-                        <i class="fas fa-users icon"></i> Users
+                        <i class="fas fa-users icon"></i> NFPs
                         <i class="fas fa-chevron-down down"></i>
                     </a>
                     <ul>
 
                         <li>
                             <a class="{{ Request::routeIs('member.index') ? 'mm-active ' : '' }}"  href="{{ route('members.index') }}">
-                                <i class="metismenu-icon"></i> Users
+                                <i class="metismenu-icon"></i> NFPs
                             </a>
                         </li>
                         <li>
                             <a class="{{ Request::routeIs('register') ? 'mm-active ' : '' }}" href="{{ route('register') }}">
                                 <i class="metismenu-icon">
-                                </i>Add Users
+                                </i>Add NFPs
                             </a>
                         </li>
                     </ul>

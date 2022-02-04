@@ -75,12 +75,13 @@ class MembersController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $country_data = explode('-', $request['country']);
         $user = User::findorFail($id);
         $user->update([
             'name' =>  $request->name,
             'password' => $request->password ?  $user->password : Hash::make($request->password),
-            'country_symbol' => strtoupper($request[0]),
-            'country' => ucwords($request[1]),
+            'country_symbol' => strtoupper($country_data[0]),
+            'country' => ucwords($country_data[1]),
             'phoneNumber' => $request['phoneNumber'],
             'date_signed_the_dcoc' => $request['date_signed_the_dcoc'],
             'date_signed_the_ja' => $request['date_signed_the_ja'],

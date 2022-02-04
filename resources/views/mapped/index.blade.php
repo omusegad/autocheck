@@ -2,30 +2,40 @@
 
 @section('content')
 <div class="app-main__inner">
-        <div class="app-page-title">
-            <div class="row mb-4">
-                <div class="col-lg-6">
-                    <div class="page-title-heading">
-                        <div class="page-title-icon">
-                            <i class="fas fa-database icon"></i>
-                        </div>
-                        <div>DCoC NFP Capacity Building Matrix
-                            <div class="page-title-subheading">
-                            All data matrice for all countries
-                            </div>
+    <div class="app-page-title">
+        <div class="row mb-4">
+            <div class="col-lg-6">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="fas fa-database icon"></i>
+                    </div>
+                    <div>Countries Matrices Data
+                        <div class="page-title-subheading">
+                           All mapped data for all Countries
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 text-right text-white">
-                    <a class="text-info btn btn-outline-info" href="{{route('matrix.create')}}"> Add Matrix</a>
-                </div>
+            </div>
+            <div class="col-lg-6 text-right text-white">
+                <a class="text-info btn btn-outline-info" href="{{route('map-data.create')}}"> Add Data</a>
             </div>
         </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            @if ($message = Session::get('message'))
+                <div class="alert alert-info alert-dismissable pt-2">
+                    <p>{{ Session::get('message') }}</p>
+                    <button type = "button" class = "close  close-btn" data-dismiss = "alert" aria-hidden = "true">×  </button>
+                </div>
+            @endif
+        </div>
+    </div>
 
         <div class="content pb-4">
             <div class="row">
 
-                <div class="col-3">
+                <div class="col-lg-12 text-right">
                     <div class="btn-group submitter-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">Country</div>
@@ -85,32 +95,6 @@
                     </div>
                 </div>
 
-                <div class="col-5">
-                    <div class="btn-group submitter-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">Pillars</div>
-                        </div>
-                        <select class="form-control pillar-dropdown">
-                            <option value="">All</option>
-                            @foreach ($pillars  as $item)
-                              <option value="{{$item->name}}">{{$item->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-4">
-                    <div class="btn-group submitter-group float-right">
-                        <div class="input-group-prepend pr-3">
-                            <div class="input-group-text">Priority</div>
-                        </div>
-                        <div class="filter-wrapper">
-                            <input type="checkbox" class="filter-checkbox" value="Low" /> Low
-                            <input type="checkbox" class="filter-checkbox" value="Medium" /> Medium
-                            <input type="checkbox" class="filter-checkbox" value="High" /> High
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -119,11 +103,9 @@
             <thead>
                 <tr>
                     <th>Created At</th>
-                    <th>Pillar</th>
-                    <th>Key Action</th>
+                    <th>By</th>
                     <th>Country</th>
                     <th>Status</th>
-                    <th>Priority</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -131,19 +113,17 @@
                 @php
                 $count=1
             @endphp
-            @foreach ($matrix as $item)
+            @foreach ($data as $item)
                 <tr>
                     <th>{{ $item->created_at}}</th>
-                    <th class="text-capitalize">{{ $item->pillar['name'] ?? "" }}</th>
-                    <td>{{ $item->key_action }} </td>
+                    <th class="text-capitalize">{{ $item->user['name'] ?? "" }}</th>
                     <td>
                         <a class="edit-btn" href="{{ route('by-country', $item->country_symbol ) }}">  {{ $item->country }}</a>
                     </td>
                     <td>{{ $item->status }}</td>
-                    <td>{{ $item->priority }}</td>
                     <td>
                         <span class="action-btns">
-                            <a class="edit-btn" href="{{ route('matrix.edit', $item->id ) }}">
+                            <a class="edit-btn" href="{{ route('map-data.edit', $item->id ) }}">
                                 <i class="far fa-edit"></i>
                             </a>
                         </span>
@@ -154,7 +134,7 @@
                             </button>
                             <div class="modal fade" id="delete_post_{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
-                                    <form action="{{ route('matrix.destroy', $item->id) }}" id="form_delete_post_{{ $item->id }}" method="post">
+                                    <form action="{{ route('map-data.destroy', $item->id) }}" id="form_delete_post_{{ $item->id }}" method="post">
                                         @csrf
                                         @method('DELETE');
                                         <div class="modal-content">
@@ -165,7 +145,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                Are you sure want to delete "<b>{{ $item->pillar['name'] }}</b>" ?
+                                                Are you sure want to delete "<b>{{ $item->status }}</b>" ?
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>

@@ -58,10 +58,10 @@
     <script type="text/javascript" src="{{ asset('js/popper.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/particles/particles.js') }}"></script>
 
-    <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.j') }}"></script>
 
 
-    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.min.j') }}"></script>
 
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/maps.js') }}"></script>
@@ -73,13 +73,13 @@
     <script>
         //fiters
         jQuery(function($) {
-
-            dataTable = $("#matrix,#users,#pillar").DataTable({
+            dataTable = $("#matrix").DataTable({
                 "columnDefs": [{
                     "targets": [0],
-                    "visible": true
-                }]
+                    "visible": false
+                }],
 
+                "order": [[ 0, "desc" ]]
             });
 
             $('.filter-checkbox').on('change', function(e) {
@@ -89,9 +89,9 @@
                         searchTerms.push("^" + $(this).val() + "$")
                     }
                 })
-                dataTable.column(4).search(searchTerms.join('|'), true, false, true).draw();
+                dataTable.column(5).search(searchTerms.join('|'), true, false, true).draw();
             });
-            
+
             $('.filter-checkbox-c').on('change', function(e) {
                 var searchTerms = []
                 $.each($('.filter-checkbox-c'), function(i, elem) {
@@ -99,7 +99,7 @@
                         searchTerms.push("^" + $(this).val() + "$")
                     }
                 })
-                dataTable.column(3).search(searchTerms.join('|'), true, false, true).draw();
+                dataTable.column(4).search(searchTerms.join('|'), true, false, true).draw();
             });
 
             $('.pillar-dropdown').on('change', function(e) {
@@ -107,7 +107,7 @@
                 $('.pillar-dropdown').val(pillar)
                 console.log(pillar)
                     //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
-                dataTable.column(0).search(pillar).draw();
+                dataTable.column(1).search(pillar).draw();
             });
 
             $('.country-dropdown').on('change', function(e) {
@@ -115,7 +115,7 @@
                 $('.country-dropdown').val(country)
                 console.log(country)
                     //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
-                dataTable.column(2).search(country).draw();
+                dataTable.column(3).search(country).draw();
             })
 
 
@@ -182,10 +182,9 @@
         });
     });
 
-
-        window.addEventListener('load', function() {
-            document.querySelector('.pre-loader').classList.add('is-loaded');
-        });
+    window.addEventListener('load', function() {
+        document.querySelector('.pre-loader').classList.add('is-loaded');
+    });
 
     </script>
 

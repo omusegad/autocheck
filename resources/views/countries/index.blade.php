@@ -30,7 +30,7 @@
     <div class="row">
         <div class="col-md-12">
            <div class="table-responsive">
-            <table class="table bg-white  table-striped table-condensed table-hover overflow-y">
+            <table id="matrix" class="table bg-white  table-striped table-condensed table-hover overflow-y">
                 <thead>
                     <tr>
                         <th>#</th>
