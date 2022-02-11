@@ -16,10 +16,10 @@
      
         <div class="row">
             <div class="col-lg-6">
-                <h5>Register</h5>
+                <h5>Register NFP</h5>
             </div>
             <div class="col-lg-6 text-right">
-                <a class="text-info btn btn-outline-info" href="{{route('members.index')}}">Users</a>
+                <a class="text-info btn btn-outline-info" href="{{route('members.index')}}">View NFPs</a>
             </div>
         </div>
             <form class="mt-2" method="POST" action="{{ route('register') }}">
@@ -117,7 +117,7 @@
 
                         <div class="form-group col-lg-4">
                             <label for="">Phone Number</label>
-                            <input  type="text" class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber" value="{{ old('phoneNumber') }}"  required autocomplete="phoneNumber">
+                            <input  type="text" class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber" value="{{ old('phoneNumber') }}"  autocomplete="phoneNumber">
                             @error('phoneNumber')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -128,37 +128,37 @@
 
                         <div class="form-group col-lg-4">
                             <label for="">Date signed the DCoC</label>
-                            <input class="form-control" type="date" name="date_signed_the_dcoc" required/>
+                            <input class="form-control" type="date" name="date_signed_the_dcoc"/>
                         </div>
 
                         <div class="form-group col-lg-4">
                             <label for="">Date signed the JA</label>
-                            <input class="form-control" type="date" name="date_signed_the_ja" required/>
+                            <input class="form-control" type="date" name="date_signed_the_ja"/>
                         </div>
 
                         <div class="form-group col-lg-6">
                             <label for="">State Designation</label>
-                            <textarea class="form-control"  name="stateDesignation" id="" cols="30" rows="5" required></textarea>
+                            <textarea class="form-control"  name="stateDesignation" id="" cols="30" rows="5"></textarea>
                         </div>
             
                         <div class="form-group col-lg-6">
                             <label for="">National Focal Point</label>
-                            <textarea class="form-control" placeholder="National Focal Point" name="national_focal_point" id="" cols="30" rows="5" required></textarea>
+                            <textarea class="form-control" placeholder="National Focal Point" name="national_focal_point" id="" cols="30" rows="5"></textarea>
                         </div>
             
                         <div class="form-group col-lg-6">
                             <label for="">Job Title</label>
-                            <textarea class="form-control" name="job_title" id="" cols="30" rows="5" required></textarea>
+                            <textarea class="form-control" name="job_title" id="" cols="30" rows="5"></textarea>
                         </div>
             
                         <div class="form-group col-lg-6">
                             <label for="">NFP Contact Details</label>
-                            <textarea class="form-control"  name="nfp_contact_details" id="" cols="30" rows="5" required></textarea>
+                            <textarea class="form-control"  name="nfp_contact_details" id="" cols="30" rows="5"></textarea>
                         </div>
             
                         <div class="form-group col-lg-6">
                             <label for="">Status</label>
-                            <textarea class="form-control"  name="status" id="" cols="30" rows="5" required></textarea>
+                            <textarea class="form-control"  name="status" id="" cols="30" rows="5" ></textarea>
                         </div>
 
                         <div class="form-group col-lg-6">

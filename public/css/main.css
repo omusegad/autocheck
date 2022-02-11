@@ -28,7 +28,7 @@
 .border-warning {
     border-color: #f7b924
 }
-
+.vertical-nav-menu .men-item
 .border-danger {
     border-color: #d92550
 }
@@ -10602,8 +10602,8 @@ button,
 }
 
 .vertical-nav-menu .men-item {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .vertical-nav-menu::after {

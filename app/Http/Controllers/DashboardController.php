@@ -12,8 +12,11 @@ class DashboardController extends Controller
     public function index()
     {
         $users = User::count();
-        $pillars = Pillar::count();
-        $matrix = Matrix::count();
+        $pillarsCount = Pillar::count();
+        $matrixCount = Matrix::count();
+
+        $matrix  = Matrix::latest()->orderBy('created_at')->get();
+        $pillars = Pillar::all();
 
        return view('dashboard', compact('users','pillars','matrix'));
     }

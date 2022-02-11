@@ -99,6 +99,11 @@
                                 <option value="superAdmin">Guest</option>
                             </select>
                         </div>
+                        
+                        <div class="form-group col-lg-6">
+                                <label for="">Email</label>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" >
+                            </div>
 
                         <div class="form-group col-lg-6">
                             <label for="">Phone Number</label>

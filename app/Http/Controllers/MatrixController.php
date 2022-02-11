@@ -11,7 +11,8 @@ use Illuminate\Http\Request;
 use App\Mail\MatrixNotification;
 use App\Http\Requests\MatrixRequest;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
+//use Illuminate\Support\Facades\Mail;
+use Mail;
 
 class MatrixController extends Controller
 {
@@ -57,7 +58,7 @@ class MatrixController extends Controller
 
         $data = Matrix::create($validated);
         if($data){
-            Mail::to(env('omusegad@gmail.com'))->send(new MatrixNotification($data));
+           Mail::to("norbert@aftersix.co.ke")->send(new MatrixNotification($data));
         }
        
         return back()->with('message', "Matrix created successfully!");

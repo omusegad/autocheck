@@ -9,9 +9,11 @@ use App\Http\Controllers\PillarController;
 use App\Http\Controllers\MapDataController;
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\KeyActionControler;
+use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\AsignRoleController;
 use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ResourcesController;
 use App\Http\Controllers\AllMapedDataController;
 
 /*
@@ -39,8 +41,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('countries', CountriesController::class);
     Route::resource('map-data', MapDataController::class);
     Route::get('/all-mapped-data', [AllMapedDataController::class, "index"])->name("all-mapped-data.index");
-
     Route::get('by-country/{ke}/', [CountriesController::class,'symbol'])->name("by-country");
+    Route::resource('partners', PartnersController::class);
+    Route::resource('all-resources', ResourcesController::class);
 
 });
 

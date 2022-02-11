@@ -83,19 +83,16 @@ class RegisterController extends Controller
             'stateDesignation' => $data['stateDesignation'],
             'national_focal_point' => $data['national_focal_point'],
             'job_title' =>$data['job_title'],
+            "nfp_contact_details" => $data['nfp_contact_details'],
         ]);
 
     }
 
     public function register(Request $request)
     {
-        $validator = $this->validator($request->all());
 
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
-        }
+        $validator = $this->validator($request->all());
+      //  dd($validator);
 
         $this->create($request->all());
         return redirect('/register'); // Change this route to your needs

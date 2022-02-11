@@ -118,6 +118,22 @@
                 dataTable.column(3).search(country).draw();
             })
 
+            $('.country-dropdown-nfp').on('change', function(e) {
+                var country = $(this).val();
+                $('.country-dropdown').val(country)
+                console.log(country)
+                    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+                dataTable.column(1).search(country).draw();
+            })
+            
+            $('.country-dropdown-partners').on('change', function(e) {
+                var country = $(this).val();
+                $('.country-dropdown').val(country)
+                console.log(country)
+                    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+                dataTable.column(2).search(country).draw();
+            })
+
 
         });
 

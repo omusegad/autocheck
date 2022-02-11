@@ -3,18 +3,95 @@
 @section('content')
 
 <div class="app-main__inner pb-5">
-    <div class="row mb-4">
-        <div class="col-lg-6">
-         <h4>NFPs</h4>
-        </div>
-        <div class="col-lg-6 text-right">
-            @if(Auth::user()->role == "superAdmin")
-                <a class="text-info btn btn-outline-info" href="{{route('register')}}"> Add NFP</a>
-            @endif
+    
+    <div class="app-page-title">
+        <div class="row mb-2">
+            <div class="col-lg-6">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="fas fa-users icon"></i>
+                    </div>
+                    <div>NFPs
+                        <div class="page-title-subheading">
+                           User's page
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-right">
+                @if(Auth::user()->role == "superAdmin")
+                    <a class="text-info btn btn-outline-info" href="{{route('register')}}"> Add NFP</a>
+                @endif
+            </div>
         </div>
     </div>
 
+ 
+
     <div class="row">
+         <div class="content pb-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="btn-group submitter-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Country</div>
+                        </div>
+                    <select class="form-control country-dropdown-nfp" name="country">
+                        <option value="" >All</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Botswana">Botswana</option>
+                        <option value="Burkina Faso">Burkina Faso</option>
+                        <option value="Burundi">Burundi</option>
+                        <option value="Cameroon">Cameroon</option>
+                        <option value="Cape Verde">Cape Verde</option>
+                        <option value="Central African Republic">Central African Republic</option>
+                        <option value="Chad">Chad</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Comoros">Comoros</option>
+                        <option value="Congo">Congo</option>
+                        <option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
+                        <option value="Cote D'Ivoire">Cote D'Ivoire</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="Equatorial Guinea">Equatorial Guinea</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="Gambia">Gambia</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Guinea">Guinea</option>
+                        <option value="Guinea Bissau">Guinea Bissau</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Kosovo">Kosovo</option>
+                        <option value="Liberia">Liberia</option>
+                        <option value="Libyan">Libyan</option>
+                        <option value="Madagascar">Madagascar</option>
+                        <option value="Malawi">Malawi</option>
+                        <option value="Mali">Mali</option>
+                        <option value="Mozambique">Mozambique</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Seychelles">Seychelles</option>
+                        <option value="Somalia">Somalia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="South Sudan">South Sudan</option>
+                        <option value="Sudan">Sudan</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="Togo">Togo</option>
+                        <option value="Tonga">Tonga</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="Zambia">Zambia</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-md-12">
             <table id="matrix" class="table table-bordered table-hover table-striped data-table w-100">
                 <thead>

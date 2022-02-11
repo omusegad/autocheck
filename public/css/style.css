@@ -477,7 +477,7 @@
     border-radius: 0px;
   }
 
-  #matrix {
+  #matrix, .data-table {
     font-size: 13px;
     line-height: 1.4;
     margin-bottom: 20px;
@@ -616,4 +616,21 @@ span.action-btns {
 
 span.action-btns button {
     border: none;
+}
+
+.slider-item-dash{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.slider-item-dash img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.widget-content .widget-heading .icon {
+  font-size: 25px;
+  padding-right: 20px;
 }

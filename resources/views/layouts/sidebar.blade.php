@@ -36,7 +36,7 @@
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
                 <li class="men-item">
-                    <a class="{{ Request::routeIs('dashboard') ? 'mm-active ' : '' }}" href="{{ route('dashboard') }}">
+                    <a class="{{ request()->routeIs('dashboard') ? 'mm-active' : '' }}" href="{{ route('dashboard') }}">
                         <i class="fas fa-tachometer-alt icon"></i>
                         <span>{{ __('Dashboard') }}</span>
                     </a>
@@ -48,19 +48,13 @@
                         <i class="fas fa-chevron-down down"></i>
                     </a>
                     <ul>
-                        <!--<li>-->
-                        <!--    <a class="{{ Request::routeIs('pillars.index') ? 'mm-active ' : '' }}" href="{{ route('pillars.index') }}">-->
-                        <!--        <i class="metismenu-icon"></i> Pillars-->
-                        <!--    </a>-->
-                        <!--</li>-->
-
                         <li>
-                            <a class="{{ Request::routeIs('matrix.index') ? 'mm-active ' : '' }}" href="{{ route('matrix.index') }}">
+                            <a class="{{ request()->routeIs('matrix.index') ? 'mm-active' : '' }}" href="{{ route('matrix.index') }}">
                                 <i class="metismenu-icon"></i> Matrix
                             </a>
                         </li>
                         <li>
-                            <a class="{{ Request::routeIs('matrix.create') ? 'mm-active ' : '' }}" href="{{ route('matrix.create') }}">
+                            <a class="{{ request()->routeIs('matrix.create') ? 'mm-active' : '' }}" href="{{ route('matrix.create') }}">
                                 <i class="metismenu-icon">
                                 </i>Add Matrix
                             </a>
@@ -75,14 +69,14 @@
                     </a>
                     <ul>
                         <li>
-                            <a class="{{ Request::routeIs('map-data.index') ? 'mm-active ' : '' }}"  href="{{ route('map-data.index') }}">
+                            <a class="{{ request()->routeIs('map-data.index') ? 'mm-active' : '' }}"  href="{{ route('map-data.index') }}">
                                 <i class="fas fa-flag icon"></i>
                                 <span>{{ __('Countries') }}</span>
                             </a>
                         </li>
 
                         <li>
-                            <a class="{{ Request::routeIs('map-data.create') ? 'mm-active ' : '' }}"  href="{{ route('map-data.create') }}">
+                            <a class="{{ request()->routeIs('map-data.create') ? 'mm-active' : '' }}"  href="{{ route('map-data.create') }}">
                                 <i class="metismenu-icon">
                                 </i>Add Data
                             </a>
@@ -98,12 +92,12 @@
                     <ul>
 
                         <li>
-                            <a class="{{ Request::routeIs('member.index') ? 'mm-active ' : '' }}"  href="{{ route('members.index') }}">
+                            <a class="{{ request()->routeIs('member.index') ? 'mm-active' : '' }}" href="{{ route('members.index') }}">
                                 <i class="metismenu-icon"></i> NFPs
                             </a>
                         </li>
                         <li>
-                            <a class="{{ Request::routeIs('register') ? 'mm-active ' : '' }}" href="{{ route('register') }}">
+                            <a class="{{ request()->routeIs('register') ? 'mm-active' : '' }}" href="{{ route('register') }}">
                                 <i class="metismenu-icon">
                                 </i>Add NFPs
                             </a>
@@ -111,6 +105,48 @@
                     </ul>
                 </li>
                 @endif
+
+                <li class="men-item">
+                    <a href="#">
+                        <i class="far fa-handshake icon"></i> Partners
+                        <i class="fas fa-chevron-down down"></i>
+                    </a>
+                    <ul>
+
+                        <li>
+                            <a class="{{ request()->routeIs('partners.index') ? 'mm-active' : '' }}" href="{{ route('partners.index') }}">
+                                <i class="metismenu-icon"></i> Partners
+                            </a>
+                        </li>
+                        <li>
+                            <a class="{{ request()->routeIs('partners.create') ? 'mm-active' : '' }}" href="{{ route('partners.create') }}">
+                                <i class="metismenu-icon">
+                                </i>Add Partners
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="men-item">
+                    <a href="#">
+                        <i class="fas fa-file-contract icon"></i> Resources
+                        <i class="fas fa-chevron-down down"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="{{ request()->routeIs('all-resources.index') ? 'mm-active' : '' }}" href="{{ route('all-resources.index') }}">
+                                <i class="metismenu-icon"></i> Resources
+                            </a>
+                        </li>
+                        <li>
+                            <a class="{{ request()->routeIs('all-resources.create') ? 'mm-active' : '' }}" href="{{ route('all-resources.create') }}">
+                                <i class="metismenu-icon">
+                                </i>Add Resources
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
