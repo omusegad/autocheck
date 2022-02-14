@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {
@@ -23,6 +25,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+    protected $redirectTo = '/register';
 
     /**
      * Where to redirect users after registration.
@@ -53,6 +56,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'country' => ['required', 'string'],
+            'role' => ['required', 'string'],
         ]);
     }
 
@@ -64,10 +69,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $country_data = explode('-', $data['country']);
+        return User::firstOrCreate([
             'name' => $data['name'],
+            'role' => $data['role'],
+            'phoneNumber' => $data['phoneNumber'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'country_symbol' => strtoupper($country_data[0]),
+            'country' => ucwords($country_data[1]),
+            'job_title' =>$data['job_title']
         ]);
+
     }
+
+
+
 }

@@ -19,7 +19,7 @@ class MapDataController extends Controller
      */
     public function index()
     {
-        $data = MappedData::with('user','pillar')->get();
+        $data = MappedData::latest()->with('user','pillar')->get();
         return view('map.index', compact("data"));
     }
 
@@ -75,13 +75,13 @@ class MapDataController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = MappedData::findorFail($id);
+        $mappedData = MappedData::findorFail($id);
 
         $data = explode('-', $request['country']);
-        $matrix->update([
-            'status'  => $request->status,
-            'country_symbol' => strtoupper($data[0]) ??  $data->country_symbol,
-            'country' => ucwords($data[1]) ??  $data->country,
+        $mappedData->update([
+            'status'  => $request->status ??  $mappedData->country_symbol,
+            'country_symbol' => strtoupper($data[0]) ??  $mappedData->country_symbol,
+            'country' => ucwords($data[1]) ??  $mappedData->country,
             'user_id' => Auth::id()
         ]);
 

@@ -32,13 +32,15 @@
 
         <div class="card">
             <div class="card-body">
-        <form action="{{ route('map-data.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('map-data.update', $data->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            {{ method_field('PATCH') }}
+
             <div class="row">
             <div class="form-group col-lg-12">
                 <label for="">Choose Country</label>
                 <select class="form-control" name="country">
-                    <option selected> {{ $data->country }} </option>
+                    <option value="{{$data->country_symbol."-".$data->country}}" selected> {{ $data->country }} </option>
                     <option value="DZ-Algeria">Algeria</option>
                     <option value="AO-Angola">Angola</option>
                     <option value="BJ-Benin">Benin</option>

@@ -70,7 +70,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $country_data = explode('-', $data['country']);
-        return User::create([
+        return User::firstOrCreate([
             'name' => $data['name'],
             'role' => $data['role'],
             'phoneNumber' => $data['phoneNumber'],
@@ -83,13 +83,15 @@ class RegisterController extends Controller
 
     }
 
+ 
+
     public function register(Request $request)
     {
-
-        $validator = $this->validator($request->all());
+        $this->validator($request->all())->validate();
 
         $this->create($request->all());
         return redirect('/register')->with('message','User registered successfully'); // Change this route to your needs
+
     }
 
 
