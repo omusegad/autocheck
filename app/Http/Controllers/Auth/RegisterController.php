@@ -89,7 +89,7 @@ class RegisterController extends Controller
         $validator = $this->validator($request->all());
 
         $this->create($request->all());
-        return redirect('/register'); // Change this route to your needs
+        return redirect('/register')->with('message','User registered successfully'); // Change this route to your needs
     }
 
 
