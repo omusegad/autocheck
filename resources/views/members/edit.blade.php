@@ -84,7 +84,7 @@
                                     <option value="ZW-Zimbabwe">Zimbabwe</option>
                                 </select>
                             </div>
-                
+
 
                         <div class="form-group col-lg-6">
                             <label for="">Name</label>
@@ -96,10 +96,10 @@
                             <select class="form-control" name="role">
                                 <option value="{{$user->role}}" selected>{{$user->role}}</option>
                                 <option value="admin">Admin</option>
-                                <option value="superAdmin">Guest</option>
+                                <option value="superAdmin">Super Admin</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group col-lg-6">
                                 <label for="">Email</label>
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" >
@@ -108,52 +108,24 @@
                         <div class="form-group col-lg-6">
                             <label for="">Phone Number</label>
                             <input class="form-control" type="text"  name="phoneNumber" value="{{ $user->phoneNumber }}"  >
-                         
-                        </div>
-                     
 
-                        <div class="form-group col-lg-6">
-                            <label for="">Date signed the DCoC</label>
-                            <input class="form-control" type="date" name="date_signed_the_dcoc" value="{{$user->date_signed_the_dcoc}}" />
                         </div>
-
-                        <div class="form-group col-lg-6">
-                            <label for="">Date signed the JA</label>
-                            <input class="form-control" type="date" name="date_signed_the_ja" value="{{$user->date_signed_the_ja}}" />
-                        </div>
-
-                        <div class="form-group col-lg-6">
-                            <label for="">State Designation</label>
-                            <textarea class="form-control"  name="stateDesignation" id="" cols="30" rows="5" >{{$user->stateDesignation}}</textarea>
-                        </div>
-            
-                        <div class="form-group col-lg-6">
-                            <label for="">National Focal Point</label>
-                            <textarea class="form-control"  name="national_focal_point" id="" cols="30" rows="5" >{{$user->national_focal_point}}</textarea>
-                        </div>
-            
-                        <div class="form-group col-lg-6">
-                            <label for="">Job Title</label>
-                            <textarea class="form-control" name="job_title" id="" cols="30" rows="5" >{{$user->job_title}}</textarea>
-                        </div>
-            
-                        <div class="form-group col-lg-6">
-                            <label for="">NFP Contact Details</label>
-                            <textarea class="form-control" name="nfp_contact_details" id="" cols="30" rows="5" >{{$user->nfp_contact_details}}</textarea>
-                        </div>
-            
 
                         <div class="form-group col-lg-6">
                             <label for="">Password</label>
-                            <input class="form-control" id="password" type="password"  value="{{$user->password}}" name="password">
+                            <input class="form-control" id="password" type="password"  value="" name="password">
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
-                        
-                    
+
+                        <div class="form-group col-lg-12">
+                            <label for="">Job Title</label>
+                            <textarea class="form-control" name="job_title" id="" cols="30" rows="5" >{{$user->job_title}}</textarea>
+                        </div>
+
                         <div class="form-group col-lg-12 text-right">
                             <button type="submit" class="btn btn-primary">
                                 {{ __('UPDATE') }}

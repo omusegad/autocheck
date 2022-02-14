@@ -24,13 +24,13 @@ class CreateUsersTable extends Migration
             $table->string('country_symbol');
             $table->string('country');
 
-            $table->date('date_signed_the_dcoc')->nullable();
-            $table->date('date_signed_the_ja')->nullable();
-            $table->longText('stateDesignation')->nullable();
-            $table->longText('national_focal_point')->nullable();
-            $table->longText('job_title')->nullable();
-            $table->longText('nfp_contact_details')->nullable();
-            
+            // $table->date('date_signed_the_dcoc')->nullable();
+            // $table->date('date_signed_the_ja')->nullable();
+            // $table->longText('stateDesignation')->nullable();
+            // $table->longText('national_focal_point')->nullable();
+            // $table->longText('job_title')->nullable();
+            // $table->longText('nfp_contact_details')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
 

@@ -92,13 +92,23 @@ class ResourcesController extends Controller
     public function update(Request $request, $id)
     {
         $resource = Resource::findorFail($id);
-        //import pdf 
-        $matrix->update([
-            'title'  => $request->title,
-            'dockLink'  => $request->key_action,
-            'doc_cat'  => $request->doc_cat,
+
+        $validated = $request->all();
+        if (!empty($validated['upload_doc'])) {
+            $image = $request->file('upload_doc');
+            $name = Str::slug($validated['title']).'_'.time();
+            $folder = '/uploads/images/';
+            $filePath = $folder . $name. '.' . $image->getClientOriginalExtension() ;
+            $this->uploadOne($image, $folder, 'public', $name);
+        }
+
+        //updeate record
+        $resource->update([
+            "title" => $validated['title'],
+            "dockLink" => $filePath ?? $resource->dockLink,
+            "doc_cat" => $validated['doc_cat']
         ]);
-     
+
         return back()->with('message', "Resource updated successfully!");
     }
 

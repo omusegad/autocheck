@@ -73,17 +73,12 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'role' => $data['role'],
+            'phoneNumber' => $data['phoneNumber'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'country_symbol' => strtoupper($country_data[0]),
             'country' => ucwords($country_data[1]),
-            'phoneNumber' => $data['phoneNumber'],
-            'date_signed_the_dcoc' => $data['date_signed_the_dcoc'],
-            'date_signed_the_ja' => $data['date_signed_the_ja'],
-            'stateDesignation' => $data['stateDesignation'],
-            'national_focal_point' => $data['national_focal_point'],
-            'job_title' =>$data['job_title'],
-            "nfp_contact_details" => $data['nfp_contact_details'],
+            'job_title' =>$data['job_title']
         ]);
 
     }
@@ -92,7 +87,6 @@ class RegisterController extends Controller
     {
 
         $validator = $this->validator($request->all());
-      //  dd($validator);
 
         $this->create($request->all());
         return redirect('/register'); // Change this route to your needs

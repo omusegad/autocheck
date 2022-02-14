@@ -13,7 +13,7 @@
                 @endif
             </div>
         </div>
-     
+
         <div class="row">
             <div class="col-lg-6">
                 <h5>Register NFP</h5>
@@ -84,7 +84,7 @@
                                     <option value="ZW-Zimbabwe">Zimbabwe</option>
                                 </select>
                             </div>
-                
+
 
                         <div class="form-group col-lg-6">
                             <label for="">Name</label>
@@ -101,7 +101,7 @@
                             <select class="form-control" name="role">
                                 <option disabled selected>Choose Role</option>
                                 <option value="admin">Admin</option>
-                                <option value="superAdmin">Guest</option>
+                                <option value="superAdmin">Super Admin</option>
                             </select>
                         </div>
 
@@ -124,44 +124,8 @@
                                 </span>
                             @enderror
                         </div>
-                     
 
                         <div class="form-group col-lg-4">
-                            <label for="">Date signed the DCoC</label>
-                            <input class="form-control" type="date" name="date_signed_the_dcoc"/>
-                        </div>
-
-                        <div class="form-group col-lg-4">
-                            <label for="">Date signed the JA</label>
-                            <input class="form-control" type="date" name="date_signed_the_ja"/>
-                        </div>
-
-                        <div class="form-group col-lg-6">
-                            <label for="">State Designation</label>
-                            <textarea class="form-control"  name="stateDesignation" id="" cols="30" rows="5"></textarea>
-                        </div>
-            
-                        <div class="form-group col-lg-6">
-                            <label for="">National Focal Point</label>
-                            <textarea class="form-control" placeholder="National Focal Point" name="national_focal_point" id="" cols="30" rows="5"></textarea>
-                        </div>
-            
-                        <div class="form-group col-lg-6">
-                            <label for="">Job Title</label>
-                            <textarea class="form-control" name="job_title" id="" cols="30" rows="5"></textarea>
-                        </div>
-            
-                        <div class="form-group col-lg-6">
-                            <label for="">NFP Contact Details</label>
-                            <textarea class="form-control"  name="nfp_contact_details" id="" cols="30" rows="5"></textarea>
-                        </div>
-            
-                        <div class="form-group col-lg-6">
-                            <label for="">Status</label>
-                            <textarea class="form-control"  name="status" id="" cols="30" rows="5" ></textarea>
-                        </div>
-
-                        <div class="form-group col-lg-6">
                             <label for="">Password</label>
                             <input id="password" type="password"  class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                             @error('password')
@@ -170,10 +134,16 @@
                                 </span>
                             @enderror
                         </div>
-                        
-                        <div class="form-group col-lg-6">
+
+                        <div class="form-group col-lg-4">
                             <label for="">Confirm Password</label>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        </div>
+
+
+                        <div class="form-group col-lg-12">
+                            <label for="">Job Title</label>
+                            <textarea class="form-control" name="job_title" id="" cols="30" rows="5"></textarea>
                         </div>
 
                         <div class="form-group col-lg-12 text-right">

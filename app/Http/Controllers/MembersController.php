@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
 
 
 class MembersController extends Controller
@@ -79,17 +80,14 @@ class MembersController extends Controller
         $user = User::findorFail($id);
         $user->update([
             'name' =>  $request->name,
-            'password' => $request->password ?  $user->password : Hash::make($request->password),
+            'role' =>  $request->role,
+            'password' => $request->password ?  $user->password :  Hash::make($request->password),
             'country_symbol' => strtoupper($country_data[0]),
             'country' => ucwords($country_data[1]),
             'phoneNumber' => $request['phoneNumber'],
-            'date_signed_the_dcoc' => $request['date_signed_the_dcoc'],
-            'date_signed_the_ja' => $request['date_signed_the_ja'],
-            'stateDesignation' => $request['stateDesignation'],
-            'national_focal_point' => $request['national_focal_point'],
             'job_title' =>$request['job_title'],
         ]);
-        return back()->with('message', "Record updated successfully!");
+        return back()->with('message', "Member updated successfully!");
 
     }
 
