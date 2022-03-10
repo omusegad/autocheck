@@ -10,7 +10,7 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- Scripts -->
-    <script  type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
+    <script  type="text/javascript" src="{{ asset('public/js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,16 +18,16 @@
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
 
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jodit/3.4.25/jodit.min.css">
 
     <!-- Styles -->
       <!-- Styles -->
-      <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-      <link href="{{ asset('css/main.min.css') }}"  rel="stylesheet" type="text/css" />
-      <link href="{{ asset('css/app.css') }}" rel="stylesheet"  type="text/css">
+      <link href="{{ asset('public/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+      <link href="{{ asset('public/css/main.min.css') }}"  rel="stylesheet" type="text/css" />
+      <link href="{{ asset('public/css/app.css') }}" rel="stylesheet"  type="text/css">
 
-      <link href="{{ asset('css/main.css') }}" rel="stylesheet"  type="text/css">
-      <link href="{{ asset('css/style.css') }}" rel="stylesheet"  type="text/css">
+      <link href="{{ asset('public/css/main.css') }}" rel="stylesheet"  type="text/css">
+      <link href="{{ asset('public/css/style.css') }}" rel="stylesheet"  type="text/css">
 
 </head>
 <body>
@@ -53,21 +53,25 @@
             </div>
     </div>
 
-    <script type="text/javascript" src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/popper.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/particles/particles.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/jquery-3.1.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/particles/particles.js') }}"></script>
 
-    <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.j') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/bootstrap.bundle.min.j') }}"></script>
 
 
-    <script type="text/javascript" src="{{ asset('js/bootstrap.min.j') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/bootstrap.min.j') }}"></script>
+
 
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="{{ asset('js/maps.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/maps.js') }}"></script>
 
 
-    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/script.js') }}"></script>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jodit/3.4.25/jodit.min.js"></script>
 
 
     <script>
@@ -125,7 +129,7 @@
                     //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
                 dataTable.column(1).search(country).draw();
             })
-            
+
             $('.country-dropdown-partners').on('change', function(e) {
                 var country = $(this).val();
                 $('.country-dropdown').val(country)
@@ -134,8 +138,30 @@
                 dataTable.column(2).search(country).draw();
             })
 
+            $('.category-dropdown').on('change', function(e) {
+                var country = $(this).val();
+                $('.country-dropdown').val(country)
+                console.log(country)
+                    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+                dataTable.column(2).search(country).draw();
+            })
+
+            $('.country-map-dropdown').on('change', function(e) {
+                var country = $(this).val();
+                $('.country-map-dropdown').val(country)
+                console.log(country)
+                    //dataTable.column(6).search('\\s' + status + '\\s', true, false, true).draw();
+                dataTable.column(2).search(country).draw();
+            })
+
+
+            /// Editor
+             var editor = new Jodit('#editor');
+            //  var nextEditor = new Jodit('#nextEditor');
+
 
         });
+
 
 
         jQuery(function($) {
@@ -196,7 +222,46 @@
                 }
             }
         });
+
+
+
     });
+
+    $(document).ready( function() {
+    	$(document).on('change', '.btn-file :file', function() {
+		var input = $(this),
+			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+		input.trigger('fileselect', [label]);
+		});
+
+		$('.btn-file :file').on('fileselect', function(event, label) {
+
+		    var input = $(this).parents('.input-group').find(':text'),
+		        log = label;
+
+		    if( input.length ) {
+		        input.val(log);
+		    } else {
+		        if( log ) alert(log);
+		    }
+
+		});
+		function readURL(input) {
+		    if (input.files && input.files[0]) {
+		        var reader = new FileReader();
+
+		        reader.onload = function (e) {
+		            $('#img-upload').attr('src', e.target.result);
+		        }
+
+		        reader.readAsDataURL(input.files[0]);
+		    }
+		}
+
+		$("#imgInp").change(function(){
+		    readURL(this);
+		});
+	});
 
     window.addEventListener('load', function() {
         document.querySelector('.pre-loader').classList.add('is-loaded');

@@ -1,17 +1,17 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="page-content">
-<div class="container-fluid">
-      <!-- start page title -->
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="page-title-box d-flex align-items-center justify-content-between">
-                <h4 class="mb-0">Add Partner</h4>
+<div class="app-main__inner">
+    <div class="app-page-title">
+        <div class="row">
+            <div class="col-sm-8 d-flex align-items-center">
+                <div class="page-title-box py-2">
+                    <h4 class="mb-0">Add Contact Details</h4>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-6 text-right text-white">
-            <a class="text-info btn btn-outline-info" href="{{route('partners.index')}}">Partners</a>
+            <div class="col-sm-4 text-right d-flex align-items-center justify-content-end">
+                <a class="text-info btn btn-outline-info" href="{{route('partners.index')}}">View Contacts</a>
+            </div>
         </div>
     </div>
     <!-- end page title -->
@@ -28,7 +28,7 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-10">
+        <div class="col-lg-12">
 
         <div class="card">
             <div class="card-body">

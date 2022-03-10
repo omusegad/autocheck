@@ -23,7 +23,7 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(\zend_current_obfuscation_level);
+                return redirect(RouteServiceProvider::HOME);
             }
         }
 

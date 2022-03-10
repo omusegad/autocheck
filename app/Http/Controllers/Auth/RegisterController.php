@@ -83,7 +83,20 @@ class RegisterController extends Controller
 
     }
 
- 
+    // public function register(Request $request)
+    // {
+
+    //   //  $validator = $this->validator($request->all());
+
+    //     $validator = Validator::make($request->all(), $rules);
+    //     if ($validator->fails()) {
+    //        // handler errors
+    //        $erros = $validator->errors();
+    //     }
+
+    //     $this->create($request->all());
+    //     return redirect('/register')->with('message','User registered successfully'); // Change this route to your needs
+    // }
 
     public function register(Request $request)
     {

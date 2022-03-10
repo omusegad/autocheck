@@ -35,7 +35,7 @@
     <div class="scrollbar-sidebar">
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
-                <li class="men-item">
+                <li class="men-item d-none">
                     <a class="{{ request()->routeIs('dashboard') ? 'mm-active' : '' }}" href="{{ route('dashboard') }}">
                         <i class="fas fa-tachometer-alt icon"></i>
                         <span>{{ __('Dashboard') }}</span>
@@ -64,7 +64,7 @@
 
                 <li class="men-item">
                     <a href="#">
-                        <i class="fas fa-flag icon"></i>Countries
+                        <i class="fas fa-flag icon"></i>Map
                         <i class="fas fa-chevron-down down"></i>
                     </a>
                     <ul>
@@ -112,18 +112,17 @@
                         <i class="fas fa-chevron-down down"></i>
                     </a>
                     <ul>
-
+                        <li>
+                            <a class="{{ request()->routeIs('our-partners.index') ? 'mm-active' : '' }}" href="{{ route('our-partners.index') }}">
+                                <i class="metismenu-icon"></i> Our Partners
+                            </a>
+                        </li>
                         <li>
                             <a class="{{ request()->routeIs('partners.index') ? 'mm-active' : '' }}" href="{{ route('partners.index') }}">
-                                <i class="metismenu-icon"></i> Partners
+                                <i class="metismenu-icon"></i>  Contacts
                             </a>
                         </li>
-                        <li>
-                            <a class="{{ request()->routeIs('partners.create') ? 'mm-active' : '' }}" href="{{ route('partners.create') }}">
-                                <i class="metismenu-icon">
-                                </i>Add Partners
-                            </a>
-                        </li>
+        
                     </ul>
                 </li>
 

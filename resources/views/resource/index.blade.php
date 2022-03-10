@@ -1,15 +1,26 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="app-main__inner">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="mb-0">Resources </h4>
+<div class="app-main__inner pb-5">
+
+        <div class="app-page-title">
+            <div class="row mb-2">
+                <div class="col-sm-8">
+                    <div class="page-title-heading">
+                        <div class="page-title-icon">
+                            <i class="fas fa-file-contract icon"></i>
+                        </div>
+                        <div>Resources
+                            <div class="page-title-subheading">
+                                Useful resources & publications for capacity building initiatives
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-6 text-right">
-                <a class="btn btn btn-outline-primary" href="{{route('all-resources.create')}}">Add Resource </a>
+                
+                <div class="col-sm-4 text-right d-flex align-items-center justify-content-end">
+                    <a class="btn btn btn-outline-primary" href="{{route('all-resources.create')}}">Add Resource </a>
+                </div>
             </div>
         </div>
 
@@ -17,23 +28,15 @@
             <div class="col-lg-12 text-right">
                 <div class="btn-group submitter-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text">Country</div>
+                        <div class="input-group-text">Categories</div>
                     </div>
-                <select class="form-control country-dropdown" name="country">
-                    <option value="" >All</option>
-                    <option value="Algeria">Algeria</option>
-                    <option value="Angola">Angola</option>
-                    <option value="Benin">Benin</option>
-                    <option value="Botswana">Botswana</option>
-                    <option value="Burkina Faso">Burkina Faso</option>
-                    <option value="Burundi">Burundi</option>
-                    <option value="Cameroon">Cameroon</option>
-                    <option value="Cape Verde">Cape Verde</option>
-                    <option value="Central African Republic">Central African Republic</option>
-                    <option value="Chad">Chad</option>
-                    <option value="Chile">Chile</option>
-                    <option value="Comoros">Comoros</option>
-                </select>
+                    <select class="form-control category-dropdown" name="country">
+                        <option value="" >All</option>
+                         <option value="Strategies and Roadmaps">Strategies and Roadmaps </option>
+                         <option value="Reports">Reports</option>
+                         <option value="Newsletters">Newsletters</option>
+                         <option value="Flyers">Flyers</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -44,7 +47,6 @@
                     <th>Title</th>
                     <th>Category</th>
                     <th>Action</th>
-                    <th>Downloads</th>
                 </tr>
             </thead>
             <tbody>
@@ -59,6 +61,10 @@
                     </td>
                     <td>{{ $item->doc_cat }} </td>
                     <td>
+                        
+                        <span class="action-btns pr-5">
+                            <a href="{{ asset('storage/app/public'.$item->dockLink) }}"> Download <i class="fas fa-download"></i></a>
+                        </span>
                         <span class="action-btns">
                             <a class="edit-btn" href="{{ route('all-resources.edit', $item->id ) }}">
                                 <i class="far fa-edit"></i>
@@ -93,9 +99,6 @@
                                 </div>
                             </div>
                         </span>
-                    </td>
-                    <td>
-                        <a href="{{ asset('storage/app/public'.$item->dockLink) }}"> Downloads </a>
                     </td>
                 </tr>
             @endforeach

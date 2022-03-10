@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="app-main__inner">
+<div class="app-main__inner pb-5">
     <div class="app-page-title">
         <div class="row">
             <div class="col-lg-12">
@@ -14,13 +14,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6">
-                Edit {{ $user->name}}
+            <div class="col-sm-8 py-2">
+                <p class="pb-0 mb-0">Edit <b>{{ $user->name}}</b></p>
             </div>
-            <div class="col-lg-6 text-right">
+            <div class="col-sm-4 text-right d-flex align-items-center justify-content-end">
                 <a class="text-info btn btn-outline-info" href="{{route("members.index")}}">View NFPs</a>
             </div>
         </div>
+    </div>
+        
         <form action="{{ route('members.update',$user->id ) }}" method="POST" enctype="multipart/form-data">
             @csrf
             {{ method_field('PATCH') }}
@@ -32,12 +34,15 @@
                             <div class="form-group col-lg-6">
                                 <label for="">Choose Country</label>
                                 <select class="form-control" name="country">
+                                    <option disabled selected>Choose country</option>
                                     <option value="{{$user->country_symbol."-".$user->country}}" selected>{{$user->country}}</option>
-                                    <option value="KE-Kenya">Kenya</option>
-                                    <option value="DJ-Djibouti">Djibouti</option>
                                     <option value="KM-Comoros">Comoros</option>
+                                    <option value="DJ-Djibouti">Djibouti</option>
                                     <option value="ET-Ethiopia">Ethiopia</option>
+                                    <option value="EG-Egypt">Egypt</option>
+                                    <option value="ER-Eritrea">Eritrea</option>
                                     <option value="JO-Jordan">Jordan</option>
+                                    <option value="KE-Kenya">Kenya</option>
                                     <option value="MG-Madagascar">Madagascar</option>
                                     <option value="MA-Maldives">Maldives</option>
                                     <option value="MU-Mauritius">Mauritius</option>
@@ -45,13 +50,16 @@
                                     <option value="OM-Oman">Oman</option>
                                     <option value="SA-Saudi Arabia">Saudi Arabia</option>
                                     <option value="SC-Seychelles">Seychelles</option>
+                                    <option value="SO-Somalia">Somalia</option>
                                     <option value="ZA-South Africa">South Africa</option>
-                                    <option value="SS-South Sudan">South Sudan</option>
+                                    <option value="SD-Sudan">Sudan</option>
                                     <option value="TZ-Tanzania">Tanzania</option>
                                     <option value="AE-United Arab Emirates">United Arab Emirates</option>
                                     <option value="YE-Yemen">Yemen</option>
                                 </select>
                             </div>
+
+
                         <div class="form-group col-lg-6">
                             <label for="">Name</label>
                             <input class="form-control" id="name" type="text"  name="name" value="{{ $user->name }}" required autocomplete="name" autofocus>

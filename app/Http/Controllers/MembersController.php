@@ -81,7 +81,7 @@ class MembersController extends Controller
         $user->update([
             'name' =>  $request->name,
             'role' =>  $request->role,
-            'password' => $request->password ?  $user->password :  Hash::make($request->password),
+            'password' => $request->password ? Hash::make($request->password) :  $user->password,
             'country_symbol' => strtoupper($country_data[0]),
             'country' => ucwords($country_data[1]),
             'phoneNumber' => $request['phoneNumber'],

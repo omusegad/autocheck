@@ -11,9 +11,8 @@
                     <div class="page-title-icon">
                         <i class="fas fa-users icon"></i>
                     </div>
-                    <div>NFPs
+                    <div>National Focal Points
                         <div class="page-title-subheading">
-                           User's page
                         </div>
                     </div>
                 </div>
@@ -38,55 +37,26 @@
                         </div>
                     <select class="form-control country-dropdown-nfp" name="country">
                         <option value="" >All</option>
-                        <option value="Algeria">Algeria</option>
-                        <option value="Angola">Angola</option>
-                        <option value="Benin">Benin</option>
-                        <option value="Botswana">Botswana</option>
-                        <option value="Burkina Faso">Burkina Faso</option>
-                        <option value="Burundi">Burundi</option>
-                        <option value="Cameroon">Cameroon</option>
-                        <option value="Cape Verde">Cape Verde</option>
-                        <option value="Central African Republic">Central African Republic</option>
-                        <option value="Chad">Chad</option>
-                        <option value="Chile">Chile</option>
                         <option value="Comoros">Comoros</option>
-                        <option value="Congo">Congo</option>
-                        <option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
-                        <option value="Cote D'Ivoire">Cote D'Ivoire</option>
+                        <option value="Djibouti">Djibouti</option>
                         <option value="Egypt">Egypt</option>
-                        <option value="Equatorial Guinea">Equatorial Guinea</option>
+                        <option value="Eritrea">Eritrea</option>
                         <option value="Ethiopia">Ethiopia</option>
-                        <option value="Gabon">Gabon</option>
-                        <option value="Gambia">Gambia</option>
-                        <option value="Ghana">Ghana</option>
-                        <option value="Guinea">Guinea</option>
-                        <option value="Guinea Bissau">Guinea Bissau</option>
+                        <option value="Jordan">Jordan</option>
                         <option value="Kenya">Kenya</option>
-                        <option value="Kosovo">Kosovo</option>
-                        <option value="Liberia">Liberia</option>
-                        <option value="Libyan">Libyan</option>
                         <option value="Madagascar">Madagascar</option>
-                        <option value="Malawi">Malawi</option>
-                        <option value="Mali">Mali</option>
+                        <option value="Maldives">Maldives</option>
+                        <option value="Mauritius">Mauritius</option>
                         <option value="Mozambique">Mozambique</option>
-                        <option value="Niger">Niger</option>
-                        <option value="Nigeria">Nigeria</option>
-                        <option value="Romania">Romania</option>
-                        <option value="Rwanda">Rwanda</option>
-                        <option value="Senegal">Senegal</option>
-                        <option value="Serbia">Serbia</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
                         <option value="Seychelles">Seychelles</option>
                         <option value="Somalia">Somalia</option>
                         <option value="South Africa">South Africa</option>
-                        <option value="South Sudan">South Sudan</option>
                         <option value="Sudan">Sudan</option>
                         <option value="Tanzania">Tanzania</option>
-                        <option value="Togo">Togo</option>
-                        <option value="Tonga">Tonga</option>
-                        <option value="Uganda">Uganda</option>
-                        <option value="Ukraine">Ukraine</option>
-                        <option value="Zambia">Zambia</option>
-                        <option value="Zimbabwe">Zimbabwe</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="Yemen">Yemen</option>
                     </select>
                     </div>
                 </div>

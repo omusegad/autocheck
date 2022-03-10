@@ -9,13 +9,13 @@
             <div class="owl-carousel owl-theme landing-banner-slider">
 
                 <div class="slider-item">
-                    <img class="assea-nav-logo" src="{{ asset('img/sol.jpg') }}"  alt="">
+                    <img class="assea-nav-logo" src="{{ asset('public/img/sol.jpg') }}"  alt="">
                 </div>
                 <div class="slider-item">
-                    <img class="assea-nav-logo" src="{{ asset('img/earth.jpg') }}"  alt="">
+                    <img class="assea-nav-logo" src="{{ asset('public/img/earth.jpg') }}"  alt="">
                 </div>
                 <div class="slider-item">
-                    <img class="assea-nav-logo" src="{{ asset('img/boat.jpg') }}"  alt="">
+                    <img class="assea-nav-logo" src="{{ asset('public/img/boat.jpg') }}"  alt="">
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                     </div>
                     <div class="form">
                         <div class="logo-wrapper">
-                            <img class="assea-nav-logo" src="{{ asset('img/logo.png') }}"  alt="">
+                            <img class="assea-nav-logo" src="{{ asset('public/img/logo.png') }}"  alt="">
                         </div>
 
                         <form name="loginform" id="loginform"  method="POST" action="{{ route('login') }}">
@@ -53,9 +53,8 @@
                                 @enderror
                             </div>
 
-
                             <p class="login-remember">
-                                <label><input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me</label>
+                                <a href="{{ route('password.request') }}">Forgot Password</a>
                             </p>
 
                            <div class="form-group">

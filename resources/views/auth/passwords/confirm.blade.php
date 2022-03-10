@@ -2,10 +2,20 @@
 
 @section('content')
 <div class="container">
+    <div class="reste-bx">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Confirm Password') }}</div>
+                <div class="card-header text-center">
+                    <div class="row">
+                        <div class="col-lg-6">
+                          <img class="assea-nav-logo" src="{{ asset('public/img/logo.png') }}"  alt="">
+                        </div>
+                        <div class="col-lg-6 pt-4 text-right">
+                          {{ __('Confirm Password') }}
+                        </div>
+                    </div>
+                </div>
 
                 <div class="card-body">
                     {{ __('Please confirm your password before continuing.') }}
@@ -46,4 +56,6 @@
         </div>
     </div>
 </div>
+</div>
+
 @endsection

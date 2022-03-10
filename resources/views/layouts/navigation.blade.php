@@ -3,7 +3,7 @@
 <div class="app-header header-shadow">
     <div class="app-header__logo">
         <div class="logo-src">
-            <img class="img-fluid"  src="{{ asset('img/logo.png') }}"  alt="">
+            <img class="img-fluid"  src="{{ asset('public/img/logo.png') }}"  alt="">
         </div>
         <div class="header__pane ml-auto">
             <div>

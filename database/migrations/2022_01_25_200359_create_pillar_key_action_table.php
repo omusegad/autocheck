@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePartnersTable extends Migration
+class CreatePillarKeyActionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreatePartnersTable extends Migration
      */
     public function up()
     {
-        Schema::create('partners', function (Blueprint $table) {
+        Schema::create('pillar_key_action', function (Blueprint $table) {
             $table->id();
-            $table->string('country');
-            $table->string('partnername');
-            $table->string('email');
-            $table->string('phoneNumber');
+            $table->unsignedBigInteger('pillar_id');
+            $table->unsignedBigInteger('key_action_id');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreatePartnersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('partners');
+        Schema::dropIfExists('pillar_key_action');
     }
 }

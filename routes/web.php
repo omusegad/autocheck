@@ -14,7 +14,9 @@ use App\Http\Controllers\AsignRoleController;
 use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ResourcesController;
+use App\Http\Controllers\OurPartnersController;
 use App\Http\Controllers\AllMapedDataController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,7 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('home');
+    Route::get('/home', [DashboardController::class, 'index']);
     Route::resource('matrix', MatrixController::class);
     Route::resource('members', MembersController::class);
     Route::resource('pillars', PillarController::class);
@@ -44,6 +47,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('by-country/{ke}/', [CountriesController::class,'symbol'])->name("by-country");
     Route::resource('partners', PartnersController::class);
     Route::resource('all-resources', ResourcesController::class);
+    Route::resource('our-partners', OurPartnersController::class);
+
 
 });
+
 
