@@ -12,10 +12,10 @@
   ),
   'app' => 
   array (
-    'name' => 'INTERNATIONAL MARITIME ORGANIZATION',
+    'name' => 'Autocheck',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://toyota.test',
+    'url' => 'http://autocheck.test',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
@@ -194,7 +194,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\laragon\\www\\matrix\\storage\\framework/cache/data',
+        'path' => 'C:\\laragon\\www\\autocheck\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -238,7 +238,7 @@
         'driver' => 'octane',
       ),
     ),
-    'prefix' => 'international_maritime_organization_cache',
+    'prefix' => 'autocheck_cache',
   ),
   'charts' => 
   array (
@@ -286,7 +286,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'toyota',
+        'database' => 'autocheckDB',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -296,7 +296,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'toyota',
+        'database' => 'autocheckDB',
         'username' => 'root',
         'password' => '',
         'unix_socket' => '',
@@ -316,7 +316,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'toyota',
+        'database' => 'autocheckDB',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -331,7 +331,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'toyota',
+        'database' => 'autocheckDB',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -346,7 +346,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'international_maritime_organization_database_',
+        'prefix' => 'autocheck_database_',
       ),
       'default' => 
       array (
@@ -378,7 +378,7 @@
     array (
       'enabled' => true,
       'driver' => 'file',
-      'path' => 'C:\\laragon\\www\\matrix\\storage\\debugbar',
+      'path' => 'C:\\laragon\\www\\autocheck\\storage\\debugbar',
       'connection' => NULL,
       'provider' => '',
       'hostname' => '127.0.0.1',
@@ -569,7 +569,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => 'C:\\laragon\\www\\matrix\\storage\\framework/laravel-excel',
+      'local_path' => 'C:\\laragon\\www\\autocheck\\storage\\framework/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,
@@ -583,13 +583,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\laragon\\www\\matrix\\storage\\app',
+        'root' => 'C:\\laragon\\www\\autocheck\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\laragon\\www\\matrix\\storage\\app/public',
-        'url' => 'http://toyota.test/storage',
+        'root' => 'C:\\laragon\\www\\autocheck\\storage\\app/public',
+        'url' => 'http://autocheck.test/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -606,7 +606,7 @@
     ),
     'links' => 
     array (
-      'C:\\laragon\\www\\matrix\\public\\storage' => 'C:\\laragon\\www\\matrix\\storage\\app/public',
+      'C:\\laragon\\www\\autocheck\\public\\storage' => 'C:\\laragon\\www\\autocheck\\storage\\app/public',
     ),
   ),
   'flare' => 
@@ -680,13 +680,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\laragon\\www\\matrix\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\autocheck\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\laragon\\www\\matrix\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\autocheck\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -737,7 +737,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\laragon\\www\\matrix\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\autocheck\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -787,14 +787,14 @@
     'from' => 
     array (
       'address' => NULL,
-      'name' => 'INTERNATIONAL MARITIME ORGANIZATION',
+      'name' => 'Autocheck',
     ),
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\laragon\\www\\matrix\\resources\\views/vendor/mail',
+        0 => 'C:\\laragon\\www\\autocheck\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -925,7 +925,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\laragon\\www\\matrix\\storage\\framework/sessions',
+    'files' => 'C:\\laragon\\www\\autocheck\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -934,7 +934,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'international_maritime_organization_session',
+    'cookie' => 'autocheck_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
@@ -963,8 +963,8 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\laragon\\www\\matrix\\resources\\views',
+      0 => 'C:\\laragon\\www\\autocheck\\resources\\views',
     ),
-    'compiled' => 'C:\\laragon\\www\\matrix\\storage\\framework\\views',
+    'compiled' => 'C:\\laragon\\www\\autocheck\\storage\\framework\\views',
   ),
 );

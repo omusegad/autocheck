@@ -17,10 +17,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
-
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jodit/3.4.25/jodit.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
-    <!-- Styles -->
       <!-- Styles -->
       <link href="{{ asset('public/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
       <link href="{{ asset('public/css/main.min.css') }}"  rel="stylesheet" type="text/css" />
@@ -31,19 +30,7 @@
 
 </head>
 <body>
-    <div class="pre-loader">
-        <div class="spinner">
-            <div class="rect1"></div>
-            <div class="rect2"></div>
-            <div class="rect3"></div>
-            <div class="rect4"></div>
-            <div class="rect5"></div>
-            <div class="rect6"></div>
-        </div>
-    </div>
-
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-
         @include('layouts.navigation')
         <div class="app-main">
 
@@ -57,21 +44,17 @@
     <script type="text/javascript" src="{{ asset('public/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/popper.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/particles/particles.js') }}"></script>
-
     <script type="text/javascript" src="{{ asset('public/js/bootstrap.bundle.min.j') }}"></script>
-
-
     <script type="text/javascript" src="{{ asset('public/js/bootstrap.min.j') }}"></script>
-
-
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="{{ asset('public/js/maps.js') }}"></script>
-
-
     <script type="text/javascript" src="{{ asset('public/js/script.js') }}"></script>
 
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jodit/3.4.25/jodit.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/js/toastr.js"></script>
+
 
 
     <script>
@@ -155,79 +138,20 @@
             })
 
 
-            /// Editor
-             var editor = new Jodit('#editor');
-            //  var nextEditor = new Jodit('#nextEditor');
+        /// Editor
+            var editor = new Jodit('#editor');
+        //  var nextEditor = new Jodit('#nextEditor');
+
+        // Toast js notifications
+        toastr.options.timeOut = 10000;
+        @if (Session::has('error'))
+            toastr.error('{{ Session::get('error') }}');
+        @elseif(Session::has('message'))
+            toastr.success('{{ Session::get('message') }}');
+        @endif
 
 
-        });
-
-
-
-        jQuery(function($) {
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 160,
-                    "density": {
-                        "enable": false
-                    }
-                },
-                "color": {
-                    "value": ["#ed4433", '#bfbfbf']
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "speed": 4,
-                        "size_min": 0.3
-                    }
-                },
-                // "shape": {
-                //     "type": ["circle", "polygon", "triangle", "hexagon"]
-                // },
-                "line_linked": {
-                    "enable": false
-                },
-                "move": {
-                    "random": true,
-                    "speed": 1,
-                    "direction": "top",
-                    "out_mode": "out"
-                }
-            },
-            "interactivity": {
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "bubble"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "repulse"
-                    }
-                },
-                "modes": {
-                    "bubble": {
-                        "distance": 250,
-                        "duration": 2,
-                        "size": 0,
-                        "opacity": 0
-                    },
-                    "repulse": {
-                        "distance": 400,
-                        "duration": 4
-                    }
-                }
-            }
-        });
-
-
-
-    });
-
-    $(document).ready( function() {
+        // Tables Search Functionality
     	$(document).on('change', '.btn-file :file', function() {
 		var input = $(this),
 			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
