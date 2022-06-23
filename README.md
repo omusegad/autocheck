@@ -60,7 +60,7 @@
 
 ## Challenges 
 - Unable to get stories with karmas result obtained was null, understanding the api stracture wasnt clear to how to obtain users with karma
-- After obtaining stories ids takes longer once one tries get stories details when push for the secong endpoint
+- After obtaining stories ids takes longer once one tries get stories details when one calls the secong endpoint
 
 ## Result as:
 [
